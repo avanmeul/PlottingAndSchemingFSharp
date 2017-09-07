@@ -88,7 +88,7 @@ let parseBool (str : string) =
     if len >= 2 && 
         str.[0] = '#' && 
         (str.[1] = 't' || str.[1] = 'f') && 
-        (len < 3 || (not (List.contains str.[3] symbolChars))) then
+        (len < 3 || (not (List.contains str.[2] symbolChars))) then
         Some (scmToken.Bool str.[1]), str.Substring(2)
     else
         None, str
@@ -254,7 +254,7 @@ let tokenListToString (lst : scmToken list) =
             | scmToken.String x ->
                 "String[" + x + "] " + (iter t)
             | scmToken.Bool x ->
-                "Char[" + x.ToString () + "] " + (iter t)
+                "Bool[" + x.ToString () + "] " + (iter t)
     iter lst
 
 type scmTokens = {
@@ -1218,9 +1218,32 @@ let scmDefine (args : scmCons) (block : scmBlock option) =
     | _ ->
         failwith "expected identifier as first arg to define"
 
-//if
+let scmIf (args : scmCons) (block : scmBlock option) =
+    match args.car with
+    | Some b ->
+        let e = eval b block
+        match e with
+        | scmObject.Atom (scmAtom.Sharp b) ->
+            match b with
+            | "t" ->
+                match args.cdr with
+                | Some (scmObject.Cons {car = Some arg1; cdr = _}) -> 
+                    eval arg1 block
+                | _ -> failwith "bad then clause in if"
+            | "f" ->
+                match args.cdr with
+                | Some (scmObject.Cons {
+                            car = _; 
+                            cdr = Some (scmObject.Cons { car = Some arg2; cdr = _}) }) -> 
+                    eval arg2 block
+                | _ -> failwith "bad then clause in if"
+            | _ -> failwith "bad boolean argument to if"
+        | _ -> failwith "la"
+    | _ -> failwith "barf"
+
 //zero?
-//refactor to get rid of option type for scheme objects; instead add scmObject.Null
+//refactor to get rid of option type for scheme objects; instead add scmObject.Null?
+//define CAR, CDR, CADR?  Use with Option.bind?
 
 let populateEnv () =
     let env = topLevel.top
@@ -1312,6 +1335,11 @@ let populateEnv () =
     env.add 
         (symbolTable.getSymbol "#f") 
         scmTrue
+        true
+        stack
+    env.add 
+        (symbolTable.getSymbol "if") 
+        (scmObject.Atom (scmAtom.Primitive scmIf))
         true
         stack
 
