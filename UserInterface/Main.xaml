@@ -1,0 +1,210 @@
+﻿<UserControl 
+    x:Class="UserInterface.Main"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="644.776" d:DesignWidth="862.687">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="MinHeight" Value="25" />
+            <Setter Property="MaxHeight" Value="30" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="AcceptsReturn" Value="True" />
+            <Setter Property="AcceptsTab" Value="True" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="IsUndoEnabled" Value="True" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+            <Setter Property="MinHeight" Value="165" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="help">
+                <MenuItem x:Name="mnuTodo" Header="to do" />
+                <Separator />
+                <MenuItem x:Name="mnuAbout" Header="about" />
+            </MenuItem>
+        </Menu>
+        <TabControl Grid.Row="1" Margin="5">
+            <!-- scheme -->
+            <TabItem Name="tabScheme" Header="scheme">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <!--<RowDefinition Height="*" MaxHeight="45" />-->
+                            <RowDefinition Height="*" MaxHeight="75" />
+                        </Grid.RowDefinitions>
+                        <GroupBox Grid.Row="0" Header="editor">
+                            <TextBox Name="txtIn"></TextBox>
+                        </GroupBox>
+                        <!---->
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <RadioButton Name="radTokenize" Margin="10,15,0,10">tokenize</RadioButton>
+                            <RadioButton Name="radUntokenize" Margin="10,15,0,10">untokenize</RadioButton>
+                            <RadioButton Name="radHeapify" Margin="10,15,0,10">heapify</RadioButton>
+                            <RadioButton Name="radEval" Margin="10,15,0,10" IsChecked="True">eval</RadioButton>
+                            <Button Name="btnGo" Margin="10,10,0,10">go</Button>
+                        </StackPanel>
+                        <!---->
+                        <!--
+                        <TabControl Grid.Row="1">
+                            <TabItem Name="tabSchemeEval" Header="eval">
+                                <Button Name="btnGo">eval</Button>
+                            </TabItem>
+                            <TabItem Name="tabSchemeDebug" Header="debug"></TabItem>
+                        </TabControl>-->
+                    </Grid>
+                    <GridSplitter 
+                        Grid.Row="1" ResizeDirection="Rows" Background="Blue"
+                        HorizontalAlignment="Stretch"  VerticalAlignment="Center" 
+                        Height="5" ShowsPreview="False"></GridSplitter>
+                    <GroupBox Grid.Row="2" Margin="0,8,0,0" Header="transcript">
+                        <TabControl>
+                            <TabItem Name="tabResult" Header="result">
+                                <TextBox Name="txtOut" />
+                            </TabItem>
+                            <TabItem Name="tabError" Header="error">
+                                <TextBox Name="txtError" />
+                            </TabItem>
+                        </TabControl>
+                    </GroupBox>
+                    <!-- to do:  add error pane in tab control -->
+                </Grid>
+            </TabItem>
+            <!-- complex -->
+            <TabItem Name="tabComplex" Header="complex">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" MaxHeight="30" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" MaxHeight="30" />
+                    </Grid.RowDefinitions>
+                    <ComboBox Grid.Row="0" Name="cbx"></ComboBox>
+                    <TextBox Grid.Row="1" Name="txt"></TextBox>
+                    <Button Grid.Row="2" Name="btn">plot</Button>
+                </Grid>
+            </TabItem>
+            <!-- vector -->
+            <TabItem Name="tabVector" Header="vector">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" MaxHeight="30" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" MaxHeight="30" />
+                    </Grid.RowDefinitions>
+                    <ComboBox Grid.Row="0" Name="cbxVector"></ComboBox>
+                    <TextBox Grid.Row="1" Name="txtVector"></TextBox>
+                    <Button Grid.Row="2" Name="btnVector">plot</Button>
+                </Grid>
+            </TabItem>
+            <!-- l-system -->
+            <TabItem Name="tabLsystem" Header="l-system">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" MaxHeight="30" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" MaxHeight="30" />
+                    </Grid.RowDefinitions>
+                    <ComboBox Grid.Row="0" Name="cbxLsystem"></ComboBox>
+                    <TabControl Grid.Row="1">
+                        <TabItem Header="gui">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <GroupBox Header="generations" Grid.Row="0">
+                                    <TextBox 
+                                        Name="txtLsystemGenerations" 
+                                        MinHeight="20" 
+                                        MaxHeight="50" 
+                                        Margin="5,5,5,5"></TextBox>
+                                </GroupBox>
+                                <Button Name="btnTemp" Grid.Row="1">go</Button>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="xml">
+                            <TextBox Name="txtLsystem"></TextBox>
+                        </TabItem>
+                    </TabControl>                    
+                    <Button Grid.Row="2" Name="btnLsystem">plot</Button>
+                </Grid>
+            </TabItem>
+            <!-- mrcm -->
+            <TabItem Name="tabMrcm" Header="mrcm">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" MaxHeight="30" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" MaxHeight="30" />
+                    </Grid.RowDefinitions>
+                    <ComboBox Grid.Row="0" Name="cbxMrcm"></ComboBox>
+                    <TextBox Grid.Row="1" Name="txtMrcm"></TextBox>
+                    <Button Grid.Row="2" Name="btnMrcm">plot</Button>
+                </Grid>
+            </TabItem>
+            <!-- mrcm new -->
+            <TabItem Name="tabMRCMnew" Header="mrcm new">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Name="btnMrcmNewScale">scale</Button>
+                    <Button Grid.Row="1" Name="btnMrcmNewRotate">rotate</Button>
+                    <Button Grid.Row="2">transform</Button>
+                </Grid>
+            </TabItem>
+            <!-- 2d -->
+            <TabItem Name="tab2d" Header="2d">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" MaxHeight="30" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" MaxHeight="30" />
+                    </Grid.RowDefinitions>
+                    <ComboBox Grid.Row="0" Name="cbx2d"></ComboBox>
+                    <TextBox Grid.Row="1" Name="txt2d"></TextBox>
+                    <Button Grid.Row="2" Name="btn2d">plot</Button>
+                </Grid>
+            </TabItem>
+            <!-- 3d -->
+            <TabItem Name="tab3d" Header="3d">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" MaxHeight="30" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" MaxHeight="30" />
+                    </Grid.RowDefinitions>
+                    <ComboBox Grid.Row="0" Name="cbx3d"></ComboBox>
+                    <TextBox Grid.Row="1" Name="txt3d"></TextBox>
+                    <Button Grid.Row="2" Name="btn3d">plot</Button>
+                </Grid>
+            </TabItem>
+            <!-- scratch -->
+            <TabItem Name="tabScratch" Header="scratch">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" MaxHeight="30" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Name="btnScratch">do it</Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

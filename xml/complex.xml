@@ -1,0 +1,5187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- complex.xml -->
+<plots>
+	<!-- seuss -->
+  <complex>
+    <info>
+			<name>seuss</name>
+			<description>From an article published at Colorado University at Denver.</description></info>
+    <iterator type="generic">
+      <function name="mandelbrot">
+        <scheme>
+          <list>
+            <atom>lambda</atom>
+            <list>
+              <atom>z</atom>
+              <atom>c</atom>
+            </list>
+            <list>
+              <atom>+</atom>
+              <list>
+                <atom>expt</atom>
+                <atom>z</atom>
+                <atom>2</atom>
+              </list>
+              <atom>c</atom>
+            </list>
+          </list>
+        </scheme></function>
+      <set type="mandelbrot"/></iterator>
+    <coordinates>
+      <x>
+        <pixels>200</pixels>
+        <center>-0.7384982</center></x>
+      <y>
+        <pixels>123</pixels>
+        <center>0.1919138</center></y>
+      <ppu>101217</ppu></coordinates>
+		<palettes>
+      <palette>
+        <color>
+          <name>white</name></color>
+        <color>
+          <name>black</name></color></palette></palettes>
+		<fates iterations="128">
+			<fate type="escapee">
+				<threshold>2</threshold>
+				<infinity>										
+					<coloring>
+						<palette>0</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+      <fate type="survivor">
+        <iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+ 	<!-- main set -->
+	<complex>
+    <info>
+			<name>main set</name>
+			<description></description></info>
+    <iterator type="generic">
+      <function name="mandelbrot">(lambda (z c) (+ (expt z 2) c))</function>
+      <set type="mandelbrot"/></iterator>
+		<coordinates>
+			<x>	
+				<pixels>200</pixels>
+				<min>-2.99763406504</min>
+				<max>1.97163406504065</max></x>
+			<y>	
+				<pixels>123</pixels>
+				<min>-1.52804995</min>
+				<max>1.52804995</max></y></coordinates>
+		<palettes>
+			<palette>
+				<color>
+					<name>white</name></color>
+				<color>
+					<name>black</name></color></palette></palettes>
+		<fates iterations="129">
+			<fate type="escapee">
+				<threshold>2</threshold>
+				<infinity>										
+					<coloring>
+						<palette>0</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+      <fate type="survivor">
+        <iterations>129</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- main set biomorph -->
+  <complex>
+    <info>
+      <name>main set (biomorph)</name>
+      <description></description>
+    </info>
+    <iterator type="generic">
+      <function name="mandelbrot">(lambda (z c) (+ (expt z 2) c))</function>
+      <set type="mandelbrot"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <pixels>600</pixels>
+        <min>-2.99763406504</min>
+        <max>1.97163406504065</max>
+      </x>
+      <y>
+        <pixels>210</pixels>
+        <min>-1.52804995</min>
+        <max>1.52804995</max>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>green</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+        <color>
+          <name>silver</name>
+        </color>
+        <color>
+          <name>tan</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>4</threshold>
+        <biomorph>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </biomorph>
+        <infinity>
+          <coloring>
+            <palette>2</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- hooks -->
+  <complex>
+    <info>
+			<name>hooks</name>
+			<description>Equation from a fractal friend in Denver.</description></info>
+    <iterator type="generic">
+      <function name="mandelbrot">(lambda (z c) (+ (expt z 2) c))</function>
+      <set type="mandelbrot"/></iterator>
+    <coordinates>
+			<x>	
+				<pixels>200</pixels>
+				<center>-0.7454264</center></x>
+			<y>	
+				<pixels>123</pixels>
+				<center>0.113009</center></y>
+			<ppu>2050000</ppu></coordinates>
+		<palettes>
+      <palette>
+        <color>
+          <name>white</name></color>
+        <color>
+          <name>black</name></color></palette></palettes>
+		<fates iterations="128">
+      <fate type="escapee">
+				<threshold>2</threshold>	
+				<infinity>								
+					<coloring>
+						<palette>0</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+			<fate type="survivor">
+        <iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- spirals -->
+  <complex>
+    <info>
+			<name>spirals</name>
+			<description>Equation from a fractal friend in Denver.</description></info>
+    <iterator type="generic">
+      <function name="mandelbrot">(lambda (z c) (+ (expt z 2) c))</function>
+      <set type="mandelbrot"/></iterator>
+    <coordinates>
+      <x>
+        <pixels>200</pixels>
+        <center>-0.745195</center></x>
+     	<y>
+        <pixels>123</pixels>
+        <center>0.11263</center></y>
+      <ppu>91791</ppu></coordinates>
+		<palettes>
+      <palette>
+        <color>
+          <name>white</name></color>
+        <color>
+          <name>black</name></color></palette></palettes>
+		<fates iterations="128">
+      <fate type="escapee">
+				<threshold>2</threshold>
+				<infinity>										
+					<coloring>
+						<palette>0</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+				<fate type="survivor">
+          <iterations>128</iterations>        			
+					<coloring>
+						<palette>0</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- mini -->
+  <complex>		
+    <info>
+			<name>mini</name>
+			<description>Equation from a fractal friend in Denver.</description></info>
+    <iterator type="generic">
+      <function name="mandelbrot">(lambda (z c) (+ (expt z 2) c))</function>
+      <set type="mandelbrot"/></iterator>
+		<coordinates>
+			<x>	
+				<pixels>200</pixels>
+				<center>-0.2175363</center></x>
+			<y>	
+				<pixels>123</pixels>
+				<center>-1.11444</center></y>
+			<ppu>761138</ppu></coordinates>
+		<palettes>
+      <palette>
+        <color>
+          <name>white</name></color>
+        <color>
+          <name>black</name></color></palette></palettes>
+		<fates iterations="500">
+      	<fate type="escapee">
+				<threshold>2</threshold>
+				<infinity>				
+					<coloring>
+						<palette>0</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+			<fate type="survivor">
+        <iterations>500</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- map 26 -->
+  <complex>		
+    <info>
+			<name>map 26</name>
+			<description>BOF.</description></info>
+    <iterator type="generic">
+      <function name="mandelbrot">(lambda (z c) (+ (expt z 2) c))</function>
+      <set type="mandelbrot"/></iterator>
+		<coordinates>
+			<x>	
+				<pixels>200</pixels>
+				<min>-2.254</min>
+				<max>0.75</max></x>
+			<y>	
+				<pixels>123</pixels>
+				<min>-1.5</min>
+				<max>1.5</max></y></coordinates>
+		<palettes>
+      <palette>
+        <color>
+          <name>white</name></color>
+        <color>
+          <name>black</name></color></palette></palettes>
+		<fates iterations="129">
+      <fate type="escapee">
+			  <threshold>2</threshold>
+				  <infinity>									
+					<coloring>
+						<palette>0</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+			<fate type="survivor">
+        <iterations>129</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- map 27 -->
+	<complex>		
+    <info>
+			<name>map 27</name>
+			<description>BOF.</description></info>
+    <iterator type="generic">
+      <function name="mandelbrot">(lambda (z c) (+ (expt z 2) c))</function>
+      <set type="mandelbrot"/></iterator>
+    <coordinates>
+			<x>	
+				<pixels>200</pixels>
+				<min>-0.19920</min>
+				<max>-0.12954</max></x>
+			<y>	
+				<pixels>123</pixels>
+				<min>1.01480</min>
+				<max>1.06707</max></y></coordinates>
+		<palettes>
+      <palette>
+        <color>
+          <name>white</name></color>
+        <color>
+          <name>black</name></color></palette></palettes>
+		<fates iterations="129">
+      <fate type="escapee">
+				<threshold>2</threshold>
+				<infinity>									
+					<coloring>
+						<palette>0</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+			<fate type="survivor">
+        <iterations>129</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- map 36 -->
+  <complex>		
+    <info>
+			<name>map 36</name>
+			<description>BOF.</description></info>
+    <iterator type="generic">
+      <function name="mandelbrot">(lambda (z c) (+ (expt z 2) c))</function>
+      <set type="mandelbrot"/></iterator>
+    <coordinates>
+			<x>	
+				<pixels>600</pixels>
+				<min>-0.75104</min>
+				<max>-0.7408</max></x>
+			<y>	
+				<pixels>210</pixels>
+				<min>0.10511</min>
+				<max>0.11536</max></y></coordinates>
+    <palettes>
+		  <palette>
+		    <color>
+			    <name>black</name></color></palette>
+      <palette>
+        <color>
+          <name>yellow</name></color>
+        <color>
+          <name>gold</name></color>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>silver</name></color>
+        <color>
+          <name>orange</name></color></palette></palettes>
+		<fates iterations="128">
+      	<fate type="escapee"><threshold>2</threshold>
+				<infinity>									
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+			  <fate type="survivor">
+          <iterations>128</iterations>        			
+				  <coloring>
+					  <palette>0</palette>
+					  <algorithm>remainder</algorithm>
+					  <orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>	
+  <!-- coat of arms -->
+	<complex>		
+    <info>
+			<name>coat of arms</name>
+			<description>I think this came from Mandelbrot's book.</description></info>
+    <iterator type="generic">
+      <function name="mandelbrot">(lambda (z c) (+ (expt z 2) c))</function>
+      <set type="julia" constant="0.32+0.043i"/></iterator>
+		<coordinates>
+			<x>	
+				<pixels>210</pixels>
+				<center>0</center></x>
+			<y>	
+				<pixels>600</pixels>
+				<center>0</center></y>
+			<ppu>115</ppu></coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name></color></palette>
+      <palette>
+        <color>
+          <name>lightblue</name></color>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>purple</name></color>
+        <color>
+          <name>seagreen</name></color>
+        <color>
+          <name>yellow</name></color>
+        <color>
+          <name>orange</name></color>
+        <color>
+          <name>aquamarine</name></color>
+        <color>
+          <name>gainsboro</name></color>
+        <color>
+          <name>gray</name></color>
+        <color>
+          <name>khaki</name></color>
+        <color>
+          <name>greenyellow</name></color>
+        <color>
+          <name>tan</name></color>
+        <color>
+          <name>blanchedalmond</name></color>
+        <color>
+          <name>red</name></color>
+        <color>
+          <name>green</name></color>
+        <color>
+          <name>salmon</name></color>
+        <color>
+          <name>gold</name></color>
+        <color>
+          <name>goldenrod</name></color>
+        <color>
+          <name>silver</name></color>
+        <color>
+          <name>maroon</name></color></palette></palettes>
+		<fates iterations="128">
+			<fate type="escapee">
+				<threshold>2</threshold>
+				<infinity>										
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+      <fate type="survivor">
+        <iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- dragon -->
+	<complex>
+    <info>
+      <name>dragon</name>
+      <description>San Marco dragon</description></info>
+    <iterator type="generic">
+      <function name="San Marco dragon">(lambda (z c) (* c (expt (- 1 z) 2)))</function>
+      <set type="julia" constant="1+0i"/></iterator>
+		<coordinates>
+			<x>	
+				<pixels>600</pixels>
+				<center>1</center></x>
+			<y>	
+				<pixels>210</pixels>
+				<center>0</center></y>
+			<ppu>115</ppu></coordinates>
+		<palettes>
+			<palette>
+				<color>
+          <name>black</name></color></palette>
+			<palette>
+				<color>
+          <name>lightblue</name></color>
+				<color>
+          <name>blue</name></color>
+				<color>
+          <name>purple</name></color>
+				<color>
+          <name>seagreen</name></color>
+				<color>
+          <name>yellow</name></color>
+				<color>
+          <name>orange</name></color>
+				<color>
+          <name>aquamarine</name></color>
+				<color>
+          <name>gainsboro</name></color>
+				<color>
+          <name>gray</name></color>
+				<color>
+          <name>khaki</name></color>
+				<color>
+          <name>greenyellow</name></color>
+				<color>
+          <name>tan</name></color>
+				<color>
+          <name>blanchedalmond</name></color>
+				<color>
+          <name>red</name></color>
+				<color>
+          <name>green</name></color>
+				<color>
+          <name>salmon</name></color>
+				<color>
+          <name>gold</name></color>
+				<color>
+          <name>goldenrod</name></color>
+				<color>
+          <name>silver</name></color>
+				<color>
+          <name>maroon</name></color></palette></palettes>
+		<fates iterations="128">
+      <fate type="escapee">
+				<threshold>4</threshold>
+				<infinity>									
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+      <fate type="survivor">
+        <iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- dragon -->
+	<complex>
+		<info>
+			<name>dragon</name>
+			<description>San Marco dragon</description></info>
+    <iterator type="generic">
+      <function name="San Marco dragon">(lambda (z c) (* c (expt (- 1 z) 2)))</function>
+      <set type="mandelbrot"/></iterator>
+    <coordinates>
+			<x>	
+				<pixels>600</pixels>
+				<min>-0.7</min>
+				<max>2.3</max></x>
+			<y>	
+				<pixels>210</pixels>
+				<min>-0.525</min>
+				<max>0.525</max></y></coordinates>
+		<palettes>
+      <palette>
+          <color>
+              <name>black</name></color></palette>
+      <palette>
+          <color>
+              <name>lightblue</name></color>
+          <color>
+              <name>blue</name></color>
+          <color>
+              <name>purple</name></color>
+          <color>
+              <name>seagreen</name></color>
+          <color>
+              <name>yellow</name></color>
+          <color>
+              <name>orange</name></color>
+          <color>
+              <name>aquamarine</name></color>
+          <color>
+              <name>gainsboro</name></color>
+          <color>
+              <name>gray</name></color>
+          <color>
+              <name>khaki</name></color>
+          <color>
+              <name>greenyellow</name></color>
+          <color>
+              <name>tan</name></color>
+          <color>
+              <name>blanchedalmond</name></color>
+          <color>
+              <name>red</name></color>
+          <color>
+              <name>green</name></color>
+          <color>
+              <name>salmon</name></color>
+          <color>
+              <name>gold</name></color>
+          <color>
+              <name>goldenrod</name></color>
+          <color>
+              <name>silver</name></color>
+          <color>
+              <name>maroon</name></color></palette></palettes>
+		<fates iterations="128">
+			<fate type="escapee">
+				<threshold>4</threshold>
+				<infinity>					
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+      <fate type="survivor">
+        <iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- z cubed main -->
+	<complex>
+		<info>
+			<name>z cubed main</name>
+			<description>I think I got this from a website.</description></info>
+    <iterator type="generic">
+      <function name="z cubed">(lambda (z c) (+ (expt z 3) c))</function>
+      <set type="mandelbrot"/></iterator>
+		<coordinates>
+			<x>	
+				<pixels>200</pixels>
+				<center>0</center></x>
+			<y>	
+				<pixels>123</pixels>
+				<center>0</center></y>
+			<ppu>70</ppu></coordinates>
+		<palettes>
+      <palette>
+        <color>
+          <name>black</name></color></palette>
+      <palette>
+				<color>
+					<name>orange</name></color>
+        <color>
+            <name>purple</name></color>
+        <color>
+            <name>yellow</name></color>
+        <color>
+            <name>green</name></color></palette>
+			<palette>
+      <color>
+        <name>blue</name></color>
+      <color>
+        <name>maroon</name></color>
+      <color>
+        <name>silver</name></color>
+      <color>
+        <name>tan</name></color></palette></palettes>
+		<fates iterations="128">
+			<fate type="escapee">
+				<threshold>4</threshold>
+				<biomorph>
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></biomorph>
+				<infinity>									
+					<coloring>
+						<palette>2</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+      <fate type="survivor">
+        <iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- z cubed -->
+	<complex>
+		<info>
+			<name>z cubed</name>
+			<description>I think I got this equation off of a website on biomorphs.</description></info>
+    <iterator type="generic">
+      <function name="z cubed">(lambda (z c) (+ (expt z 3) c))</function>
+      <set type="mandelbrot"/></iterator>
+    <coordinates>
+      <x>
+        <pixels>600</pixels>
+        <center>0.004761904761</center></x>
+      <y>
+        <pixels>210</pixels>
+        <center>0.792380952380</center></y>
+      <ppu>175</ppu></coordinates>
+    <palettes>
+      <palette>
+        <color>
+					<name>black</name></color></palette>
+      <palette>
+        <color>
+					<name>orange</name></color>
+        <color>
+					<name>purple</name></color>
+        <color>
+            <name>yellow</name></color>
+        <color>
+            <name>green</name></color></palette>
+			<palette>
+        <color>
+            <name>blue</name></color>
+        <color>
+            <name>maroon</name></color>
+        <color>
+            <name>silver</name></color>
+        <color>
+            <name>tan</name></color></palette></palettes>
+		<fates iterations="61">
+			<fate type="escapee">
+				<threshold>4</threshold>
+				<biomorph>
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></biomorph>
+				<infinity>									
+					<coloring>
+						<palette>2</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+      <fate type="survivor">
+        <iterations>61</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- z cubed main -->
+	<complex>
+		<info>
+			<name>z cubed main</name>
+			<description></description></info>
+    <iterator type="generic">
+      <function name="z cubed">(lambda (z c) (+ (expt z 3) c))</function>
+      <set type="julia" constant="-1-1i"/></iterator>
+    <coordinates>
+      <x>
+        <pixels>600</pixels>
+        <center>0</center></x>
+      <y>
+        <pixels>210</pixels>
+        <center>0</center></y>
+      <ppu>70</ppu></coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name></color></palette>
+      <palette>
+        <color>
+          <name>orange</name></color>
+        <color>
+          <name>purple</name></color>
+        <color>
+          <name>yellow</name></color>
+        <color>
+          <name>green</name></color></palette>
+			<palette>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>maroon</name></color>
+        <color>
+          <name>silver</name></color>
+        <color>
+          <name>tan</name></color></palette></palettes>
+		<fates iterations="61">
+      <fate type="escapee">
+				<threshold>4</threshold>
+				<biomorph>
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></biomorph>
+				<infinity>									
+					<coloring>
+						<palette>2</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+			<fate type="survivor">
+        <iterations>61</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- z cubed -->
+  <complex>
+		<info>
+			<name>z cubed -1-1i</name>
+			<description></description></info>
+    <iterator type="generic">
+      <function name="z cubed">
+        (lambda (z c) 
+          (+ (expt z 3) c))</function>
+      <set type="julia" constant="-1-1i"/></iterator>
+    <coordinates>
+      <x>
+        <center>0</center>
+        <pixels>600</pixels></x>
+      <y>
+        <center>0</center>
+        <pixels>210</pixels></y>
+      <ppu>175</ppu></coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name></color></palette>
+      <palette>
+        <color>
+          <name>orange</name></color>
+        <color>
+          <name>purple</name></color>
+        <color>
+          <name>yellow</name></color>
+        <color>
+          <name>green</name></color></palette>
+			<palette>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>maroon</name></color>
+        <color>
+          <name>silver</name></color>
+        <color>
+          <name>tan</name></color></palette></palettes>
+		<fates iterations="61">
+      <fate type="escapee">
+				<threshold>4</threshold>
+				<biomorph>
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></biomorph>
+				<infinity>									
+					<coloring>
+						<palette>2</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+			<fate type="survivor">
+        <iterations>61</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- z cubed 0.4+0.7i -->
+  <complex>
+    <info>
+      <name>z cubed 0.4+0.7i</name>
+      <description></description>
+    </info>
+    <iterator type="generic">
+      <function name="z cubed">
+        (lambda (z c)
+        (+ (expt z 3) c))
+      </function>
+      <set type="julia" constant="0.4+0.7i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <center>0</center>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <center>0</center>
+        <pixels>210</pixels>
+      </y>
+      <ppu>75</ppu>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>green</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+        <color>
+          <name>silver</name>
+        </color>
+        <color>
+          <name>tan</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="61">
+      <fate type="escapee">
+        <threshold>4</threshold>
+        <biomorph>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </biomorph>
+        <infinity>
+          <coloring>
+            <palette>2</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="survivor">
+        <iterations>61</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- z cubed julia 0.5+0i -->
+  <complex>
+    <info>
+      <name>angelfish 0.5+0i</name>
+      <description>Try also: 0.45+0i, 0.7+0i</description>
+    </info>
+    <iterator type="generic">
+      <function name="z cubed">
+        (lambda (z c)
+        (+ (expt z 3) c))
+      </function>
+      <set type="julia" constant="0.5+0i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <center>0</center>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <center>0</center>
+        <pixels>210</pixels>
+      </y>
+      <ppu>175</ppu>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>green</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+        <color>
+          <name>silver</name>
+        </color>
+        <color>
+          <name>tan</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="61">
+      <fate type="escapee">
+        <threshold>4</threshold>
+        <biomorph>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </biomorph>
+        <infinity>
+          <coloring>
+            <palette>2</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="survivor">
+        <iterations>61</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- penguins -->
+	<complex>
+		<info>
+			<name>penguins</name>
+			<description>From fractal programming in C (Stevens).  Penguins is my name for this plot that was not shown in the book.  Try also: 0.321+0i</description></info>
+    <iterator type="phoenix">
+      <function name="phoenix">
+        (lambda (z c p) 
+          (+ 
+            (expt z 2) 
+            (real-part c) 
+            (* (imag-part c) p)))</function>
+      <set type="julia" constant="-0.550704-1.255014i"/></iterator>
+    <coordinates swapXY="true">
+      <x>
+        <center>0</center>
+        <pixels>600</pixels></x>
+      <y>
+        <center>-0.45</center>
+        <pixels>210</pixels></y>
+      <ppu>227</ppu></coordinates>
+		<palettes>
+      <palette>
+        <color>
+          <name>tan</name></color></palette>
+      <palette>
+        <!-- 0 -->
+        <color>
+          <name>maroon</name>
+        </color>
+        <!-- 1 -->
+        <color>
+          <rgb>
+            <red>67</red>
+            <green>249</green>
+            <blue>6</blue>
+          </rgb>
+        </color>
+        <!-- 2 -->
+        <color>
+          <rgb>
+            <red>0</red>
+            <green>128</green>
+            <blue>255</blue>
+          </rgb>
+        </color>
+        <!-- 3 -->
+        <color>
+          <name>aquamarine</name>
+        </color>
+        <!-- 4 -->
+        <color>
+          <name>Bisque</name>
+        </color>
+        <!-- 5 -->
+        <color>
+          <name>Black</name>
+        </color>
+        <!-- 6 -->
+        <color>
+          <name>FloralWhite</name>
+        </color>
+        <!-- 7 -->
+        <color>
+          <name>Orange</name>
+        </color>
+        <!-- 8 -->
+        <color>
+          <name>Goldenrod</name>
+        </color>
+        <!-- 9 -->
+        <color>
+          <name>Purple</name>
+        </color>
+        <!-- 10 -->
+        <color>
+          <name>Gold</name>
+        </color>
+        <!-- 11 -->
+        <color>
+          <name>LightGreen</name>
+        </color>
+        <!-- 12 -->
+        <color>
+          <name>Yellow</name>
+        </color>
+        <!-- 13 -->
+        <color>
+          <name>LightBlue</name>
+        </color>
+        <!-- 14 -->
+        <color>
+          <name>Blue</name>
+        </color>
+        <!-- 15 -->
+        <color>
+          <name>silver</name>
+        </color>
+        <!-- 16 -->
+        <color>
+          <name>brown</name>
+        </color>
+      </palette></palettes>
+		<fates iterations="128">
+      <fate type="escapee">
+				<threshold>2</threshold>
+				<infinity>									
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>up</orbitNumbering></coloring></infinity></fate>
+			<fate type="survivor">
+        <iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>up</orbitNumbering></coloring></fate></fates></complex>
+  <!-- sad monster -->
+	<complex>
+		<info>
+			<name>sad monster</name>
+			<description>Plate 24 from "Fractal Programming in C (Stevens)."</description></info>
+    <iterator type="phoenix">
+      <function name="phoenix">
+        (lambda (z c p)
+        (+
+        (expt z 2)
+        (real-part c)
+        (* (imag-part c) p)))
+      </function>
+      <set type="julia" constant="0.356338-1.209169i"/></iterator>
+    <coordinates swapXY="true">
+      <x>
+        <center>0</center>
+        <pixels>600</pixels></x>
+      <y>
+        <center>0.2</center>
+        <pixels>210</pixels></y>
+        <ppu>227</ppu></coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name></color></palette>
+      <palette>
+        <color>
+          <name>yellow</name></color>
+        <color>
+          <name>red</name></color>
+        <color>
+          <name>purple</name></color>
+        <color>
+          <name>green</name></color>
+        <color>
+          <name>orange</name></color>
+        <color>
+          <name>maroon</name></color>
+        <color>
+          <name>brown</name></color>
+        <color>
+          <name>seagreen</name></color>
+        <color>
+          <name>goldenrod</name></color>
+        <color>
+          <name>gold</name></color>
+        <color>
+          <name>lightgreen</name></color>
+        <color>
+          <name>lightblue</name></color>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>silver</name></color></palette></palettes>
+		<fates iterations="128">
+      <fate type="escapee">
+				<threshold>2</threshold>
+				<infinity>									
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>up</orbitNumbering></coloring></infinity></fate>
+			<fate type="survivor">
+        <iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>up</orbitNumbering></coloring></fate></fates></complex>
+  <!-- sea shells -->
+	<complex>
+		<info>
+			<name>sea shells</name>
+			<description>Coordinates from "Fractal Programming in C (Stevens)."</description></info>
+    <iterator type="phoenix">
+      <function name="phoenix">
+        (lambda (z c p)
+        (+
+        (expt z 2)
+        (real-part c)
+        (* (imag-part c) p)))</function>
+      <set type="julia" constant="0.288732+0.510029i"/></iterator>
+    <coordinates swapXY="true">
+      <x>
+        <center>0</center>
+        <pixels>600</pixels></x>
+      <y>
+        <center>-0.06</center>
+        <pixels>210</pixels></y>
+      <ppu>105</ppu></coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name></color></palette>
+      <palette>
+        <color>
+          <name>yellow</name></color>
+        <color>
+          <name>red</name></color>
+        <color>
+          <name>purple</name></color>
+        <color>
+          <name>green</name></color>
+        <color>
+          <name>orange</name></color>
+        <color>
+          <name>maroon</name></color>
+        <color>
+          <name>brown</name></color>
+        <color>
+          <name>seagreen</name></color>
+        <color>
+          <name>goldenrod</name></color>
+        <color>
+          <name>gold</name></color>
+        <color>
+					<name>lightgreen</name></color>
+        <color>
+					<name>lightblue</name></color>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>silver</name></color></palette></palettes>
+		<fates iterations="128">
+			<fate type="escapee">
+				<threshold>2</threshold>
+				<infinity>									
+			    <coloring>
+				    <palette>1</palette>
+				    <algorithm>remainder</algorithm>
+				    <orbitNumbering>up</orbitNumbering></coloring></infinity></fate>
+      <fate type="survivor">
+        <iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>up</orbitNumbering></coloring></fate></fates></complex>
+  <!-- dancing birds -->
+	<complex>
+		<info>
+			<name>dancing birds</name>
+			<description>Plate 23 from "Fractal Programming in C"</description></info>
+    <iterator type="phoenix">
+      <function name="phoenix">
+        (lambda (z c p)
+        (+
+        (expt z 2)
+        (real-part c)
+        (* (imag-part c) p)))</function>
+      <set type="julia" constant="0.56667-0.5i"/></iterator>
+    <coordinates swapXY="true">
+      <x>
+        <center>0</center>
+        <pixels>600</pixels></x>
+      <y>
+        <center>0.03</center>
+        <pixels>210</pixels></y>
+      <ppu>123</ppu></coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>gold</name></color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name></color>
+        <color>
+          <name>yellow</name></color>
+        <color>
+          <name>red</name></color>
+        <color>
+          <name>azure</name></color>
+        <color>
+          <name>Green</name></color>
+        <color>
+          <name>silver</name></color>
+        <color>
+          <name>black</name></color>
+        <color>
+          <name>floralwhite</name></color>
+        <color>
+          <name>seagreen</name></color>
+        <color>
+          <name>goldenrod</name></color>
+        <color>
+          <name>orange</name></color>
+        <color>
+          <name>lightgreen</name></color>
+        <color>
+          <name>lightblue</name></color>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>pink</name></color></palette>
+      <palette>
+        <color>
+          <name>greenyellow</name>
+        </color>
+        <color>
+          <name>aquamarine</name>
+        </color>
+        <color>
+          <name>gainsboro</name>
+        </color>
+        <color>
+          <name>gray</name>
+        </color>
+      </palette>      
+    </palettes>
+		<fates iterations="128">      			
+			<fate type="escapee">
+		    <threshold>2</threshold>
+		    <infinity>									
+			    <coloring>
+				    <palette>1</palette>
+				    <algorithm>quotient</algorithm>
+				    <orbitNumbering>up</orbitNumbering></coloring></infinity></fate>
+			<fate type="survivor">
+        <iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>quotient</algorithm>
+					<orbitNumbering>up</orbitNumbering></coloring></fate></fates></complex>
+  <!-- tv static -->
+	<complex>
+		<info>
+			<name>tv static</name>
+			<description>From "Fractal Programming in C (Stevens)."</description></info>
+    <iterator type="phoenix">
+      <function name="phoenix">
+        (lambda (z c p)
+        (+
+        (expt z 2)
+        (real-part c)
+        (* (imag-part c) p)))</function>
+      <set type="mandelbrot"/></iterator>
+    <coordinates>
+      <x>
+        <center>-0.68</center>
+        <pixels>210</pixels></x>
+      <y>
+        <center>-0.4</center>
+        <pixels>600</pixels></y>
+      <ppu>70</ppu></coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name></color></palette>
+      <palette>
+        <color>
+          <name>lightblue</name></color>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>purple</name></color>
+        <color>
+          <name>seagreen</name></color>
+        <color>
+          <name>yellow</name></color>
+        <color>
+          <name>greenyellow</name></color>
+        <color>
+          <name>aquamarine</name></color>
+        <color>
+          <name>gainsboro</name></color>
+        <color>
+          <name>gray</name></color>
+        <color>
+          <name>khaki</name></color>
+        <color>
+          <name>orange</name></color>
+        <color>
+          <name>tan</name></color>
+        <color>
+          <name>blanchedalmond</name></color>
+        <color>
+          <name>red</name></color>
+        <color>
+          <name>green</name></color>
+        <color>
+          <name>salmon</name></color>
+        <color>
+          <name>gold</name></color>
+        <color>
+          <name>goldenrod</name></color>
+        <color>
+          <name>silver</name></color></palette></palettes>
+    <fates iterations="128">
+			<fate type="escapee">
+				<threshold>4</threshold>
+				<infinity>									
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>     
+			<fate type="survivor">
+        <iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- critter -->
+	<complex>
+		<info>
+			<name>critter</name>
+			<description>BOF</description></info>
+    <iterator type="newton BOF">
+      <function name="critter">
+        (lambda (z)
+          (* (- z 1) ((expt z 2) + z + 0.5)))
+      </function>
+      <derivative>((z - 1) * ((2 * z) + 1)) + (z * z) + z + c</derivative>
+      <s>0</s>
+      <set type="newton BOF"/>
+    </iterator>
+    <coordinates>
+      	<x>
+        	<center>-0.377</center>
+        	<pixels>600</pixels></x>
+      	<y>
+        	<center>0</center>
+        	<pixels>210</pixels></y>
+      	<ppu>23100</ppu></coordinates>
+   	<palettes>
+      <!--0:  survivor-->
+      <palette>
+        <color>
+          <name>white</name></color>
+        <color>
+          <name>black</name></color></palette>
+      <!--1:  escapee-->
+      <palette>
+        <color>
+          <name>lightblue</name></color>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>purple</name></color>
+        <color>
+          <name>azure</name></color></palette>
+      <!--2:  root 1-->
+      <palette>
+        <color>
+          <rgb>
+            <red>22</red>
+            <green>13</green>
+            <blue>213</blue></rgb></color>
+        <color>
+          <rgb>
+            <red>180</red>
+            <green>252</green>
+            <blue>252</blue></rgb></color></palette>
+      <!--3:  root 2-->
+      <palette>
+        <color>
+          <rgb>
+            <red>156</red>
+            <green>233</green>
+            <blue>154</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>128</red>
+            <green>64</green>
+            <blue>0</blue></rgb></color>
+        <color>
+          <rgb>
+            <red>255</red>
+            <green>255</green>
+            <blue>0</blue></rgb></color>
+        <color>
+          <name>red</name></color>
+
+      </palette>
+    </palettes>
+    <fates iterations="129">
+			<fate type="escapee">
+				<threshold>100</threshold>
+				<infinity>        
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>1</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>-0.5+0.5i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 3</name>
+        <value>-0.5-0.5i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>129</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- critter main set -->
+  <complex>
+    <info>
+      <name>critter main set</name>
+      <description>BOF</description>
+  </info>
+    <iterator type="newton BOF">
+      <function name="critter">
+        (lambda (z)
+        (* (- z 1) ((expt z 2) + z + 0.5)))
+      </function>
+      <derivative>((z - 1) * ((2 * z) + 1)) + (z * z) + z + c</derivative>
+      <s>0</s>
+      <set type="newton BOF"/>
+    </iterator>
+    <coordinates swapXY="true">
+      <x>
+        <center>0</center>
+        <pixels>210</pixels></x>
+      <y>
+        <center>0</center>
+        <pixels>600</pixels></y>
+      <ppu>15</ppu></coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>white</name></color>
+        <color>
+          <name>black</name></color></palette>
+      <palette>
+        <color>
+          <name>lightblue</name></color>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>purple</name></color>
+        <color>
+          <name>azure</name></color></palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>22</red>
+            <green>13</green>
+            <blue>213</blue></rgb></color>
+        <color>
+          <rgb>
+            <red>180</red>
+            <green>252</green>
+            <blue>252</blue></rgb></color>
+        <color>
+          <rgb>
+            <red>115</red>
+            <green>214</green>
+            <blue>41</blue></rgb></color>
+        <color>
+          <rgb>
+            <red>255</red>
+            <green>128</green>
+            <blue>64</blue></rgb></color></palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>128</red>
+            <green>64</green>
+            <blue>0</blue></rgb></color>
+        <color>
+          <rgb>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue></rgb></color>
+        <color>
+          <rgb>
+            <red>174</red>
+            <green>238</green>
+            <blue>153</blue></rgb></color>
+        <color>
+          <rgb>
+            <red>201</red>
+            <green>186</green>
+            <blue>201</blue></rgb></color>
+        <color>
+          <rgb>
+            <red>139</red>
+            <green>125</green>
+            <blue>142</blue></rgb></color></palette></palettes>
+    <fates iterations="129">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>1</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>-0.5+0.5i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 3</name>
+        <value>-0.5-0.5i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>1</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate></fates></complex>
+  <!-- map 77 -->
+	<complex>
+    <info>
+      <name>map 77</name>
+      <description></description></info>
+    <iterator type="newton BOF">
+      <function name="critter">
+        (lambda (z)
+          (* (- z 1) ((expt z 2) + z + 0.5)))
+      </function>
+      <derivative>((z - 1) * ((2 * z) + 1)) + (z * z) + z + c</derivative>
+      <s>0</s>
+      <set type="newton BOF"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <max>1.71</max>
+        <min>-2.46</min>
+        <pixels>200</pixels>
+      </x>
+      <y>
+        <max>0.28</max>
+        <min>-0.28</min>
+        <pixels>200</pixels>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>white</name>
+        </color>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>lightblue</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>azure</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>22</red>
+            <green>13</green>
+            <blue>213</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>180</red>
+            <green>252</green>
+            <blue>252</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>115</red>
+            <green>214</green>
+            <blue>41</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>255</red>
+            <green>128</green>
+            <blue>64</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>128</red>
+            <green>64</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>174</red>
+            <green>238</green>
+            <blue>153</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>201</red>
+            <green>186</green>
+            <blue>201</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>139</red>
+            <green>125</green>
+            <blue>142</blue>
+          </rgb>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="129">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>1</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>-0.5+0.5i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 3</name>
+        <value>-0.5-0.5i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>1</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- plate 27 -->
+	<complex>
+    <info>
+      <name>plate 27</name>
+      <description></description></info>
+    <iterator type="newton">
+      <function name="plate 27">
+        (lambda (z c)
+          (z * z * z) - c)
+      </function>
+      <derivative>((z - 1) * ((2 * z) + 1)) + (z * z) + z + c</derivative>
+      <set type="julia" constant="1+0i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <max>3.5</max>
+        <min>-3.5</min>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <max>2.5</max>
+        <min>-2.5</min>
+        <pixels>210</pixels>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>green</name>
+        </color>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>lightblue</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>azure</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>red</name>
+        </color>
+        <color>
+          <name>brown</name>
+        </color>
+        <color>
+          <name>beige</name>
+        </color>
+        <color>
+          <name>gray</name>
+        </color>
+        <color>
+          <name>silver</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>22</red>
+            <green>13</green>
+            <blue>213</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>180</red>
+            <green>252</green>
+            <blue>252</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>115</red>
+            <green>214</green>
+            <blue>41</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>255</red>
+            <green>128</green>
+            <blue>64</blue>
+          </rgb>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="129">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 2</name>
+        <value>fixpoint</value>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 3</name>
+        <value>oscillation</value>
+        <coloring>
+          <palette>4</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>129</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- plate 28 -->
+	<complex>
+    <info>
+      <name>plate 28</name>
+      <description>BOF</description>
+    </info>		
+    <iterator type="newton">
+      <function name="plate 28">
+        (lambda (z c)
+          (z * z * z) - (2 * z) + c)
+      </function>
+      <derivative>((z - 1) * ((2 * z) + 1)) + (z * z) + z + c</derivative>
+      <set type="julia" constant="-5+0i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <min>-0.9</min>
+        <max>1.5</max>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <min>-1</min>
+        <max>1</max>
+        <pixels>210</pixels>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>white</name>
+        </color>
+        <color>
+          <name>red</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>lightblue</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>azure</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>22</red>
+            <green>13</green>
+            <blue>213</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>180</red>
+            <green>252</green>
+            <blue>252</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>115</red>
+            <green>214</green>
+            <blue>41</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>255</red>
+            <green>128</green>
+            <blue>64</blue>
+          </rgb>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="129">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="orbit check">
+        <name>all fixpoints</name>
+        <value>fixpoint</value>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>all oscillations</name>
+        <value>oscillation</value>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>129</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- z^2 x-->
+	<complex>
+    <info>
+      <name>z^2</name>
+      <description></description>
+    </info>
+    <iterator type="newton">
+      <function name="z^2">(z * z) + c</function>
+      <derivative></derivative>
+      <set type="julia" constant="-1+0i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <center>0</center>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <center>0</center>
+        <pixels>210</pixels>
+      </y>
+		<ppu>105</ppu>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>beige</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>SeaGreen</name>
+        </color>
+        <color>
+          <name>Aquamarine</name>
+        </color>
+        <color>
+          <name>Gainsboro</name>
+        </color>
+        <color>
+          <name>Gray</name>
+        </color>
+        <color>
+          <name>Khaki</name>
+        </color>
+        <color>
+          <name>Tan</name>
+        </color>
+        <color>
+          <name>BlanchedAlmond</name>
+        </color>
+        <color>
+          <name>Red</name>
+        </color>
+        <color>
+          <name>Green</name>
+        </color>
+        <color>
+          <name>Salmon</name>
+        </color>
+        <color>
+          <name>Gold</name>
+        </color>
+        <color>
+          <name>Goldenrod</name>
+        </color>
+        <color>
+          <name>Silver</name>
+        </color>
+        <color>
+          <rgb>
+            <red>156</red>
+            <green>233</green>
+            <blue>154</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>lightblue</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>blueviolet</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>yellowgreen</name>
+        </color>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="129">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 2</name>
+        <value>fixpoint</value>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 3</name>
+        <value>oscillation</value>
+        <coloring>
+          <palette>4</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>129</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- z^3 -->
+	<complex>
+    <info>
+      <name>z^3</name>
+      <description></description>
+    </info>
+    <iterator type="newton">
+      <function name="z^3">
+        (z * z * z) + c
+      </function>
+      <derivative></derivative>
+      <set type="julia" constant="-1+0i"/>
+    </iterator>   
+    <coordinates>
+      <x>
+        <min>-0.9</min>
+        <max>1.5</max>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <min>-1</min>
+        <max>1</max>
+        <pixels>210</pixels>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>beige</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>SeaGreen</name>
+        </color>
+        <color>
+          <name>Aquamarine</name>
+        </color>
+        <color>
+          <name>Gainsboro</name>
+        </color>
+        <color>
+          <name>Gray</name>
+        </color>
+        <color>
+          <name>Khaki</name>
+        </color>
+        <color>
+          <name>Tan</name>
+        </color>
+        <color>
+          <name>BlanchedAlmond</name>
+        </color>
+        <color>
+          <name>Red</name>
+        </color>
+        <color>
+          <name>Green</name>
+        </color>
+        <color>
+          <name>Salmon</name>
+        </color>
+        <color>
+          <name>Gold</name>
+        </color>
+        <color>
+          <name>Goldenrod</name>
+        </color>
+        <color>
+          <name>Silver</name>
+        </color>
+        <color>
+          <rgb>
+            <red>156</red>
+            <green>233</green>
+            <blue>154</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>lightblue</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>blueviolet</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>yellowgreen</name>
+        </color>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="129">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 2</name>
+        <value>fixpoint</value>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 3</name>
+        <value>oscillation</value>
+        <coloring>
+          <palette>4</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>129</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- z^4 -->
+	<complex>
+    <info>
+      <name>z^4</name>
+      <description></description>
+    </info>
+    <iterator type="newton">
+      <function name="z^4">(z * z * z * z) + c</function>
+      <derivative></derivative>
+      <s></s>
+      <set type="julia" constant="-1+0i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <center>0</center>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <center>0</center>
+        <pixels>210</pixels>
+      </y>
+      <ppu>105</ppu>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>beige</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>SeaGreen</name>
+        </color>
+        <color>
+          <name>Aquamarine</name>
+        </color>
+        <color>
+          <name>Gainsboro</name>
+        </color>
+        <color>
+          <name>Gray</name>
+        </color>
+        <color>
+          <name>Khaki</name>
+        </color>
+        <color>
+          <name>Tan</name>
+        </color>
+        <color>
+          <name>BlanchedAlmond</name>
+        </color>
+        <color>
+          <name>Red</name>
+        </color>
+        <color>
+          <name>Green</name>
+        </color>
+        <color>
+          <name>Salmon</name>
+        </color>
+        <color>
+          <name>Gold</name>
+        </color>
+        <color>
+          <name>Goldenrod</name>
+        </color>
+        <color>
+          <name>Silver</name>
+        </color>
+        <color>
+          <rgb>
+            <red>156</red>
+            <green>233</green>
+            <blue>154</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>lightblue</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>blueviolet</name>
+        </color>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>yellowgreen</name>
+        </color>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>violet</name>
+        </color>
+        <color>
+          <name>chartreuse</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="129">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 2</name>
+        <value>fixpoint</value>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 3</name>
+        <value>oscillation</value>
+        <coloring>
+          <palette>4</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>129</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- z^5 -->
+	<complex>
+    <info>
+      <name>z^5</name>
+      <description></description>
+    </info>
+    <iterator type="newton">
+      <function name="z^5">(z * z * z * z * z) + c</function>
+      <derivative></derivative>
+      <set type="julia" constant="-1+0i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <center>0</center>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <center>0</center>
+        <pixels>210</pixels>
+      </y>
+      <ppu>105</ppu>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>beige</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>SeaGreen</name>
+        </color>
+        <color>
+          <name>Aquamarine</name>
+        </color>
+        <color>
+          <name>Gainsboro</name>
+        </color>
+        <color>
+          <name>Gray</name>
+        </color>
+        <color>
+          <name>Khaki</name>
+        </color>
+        <color>
+          <name>Tan</name>
+        </color>
+        <color>
+          <name>BlanchedAlmond</name>
+        </color>
+        <color>
+          <name>Red</name>
+        </color>
+        <color>
+          <name>Green</name>
+        </color>
+        <color>
+          <name>Salmon</name>
+        </color>
+        <color>
+          <name>Gold</name>
+        </color>
+        <color>
+          <name>Goldenrod</name>
+        </color>
+        <color>
+          <name>Silver</name>
+        </color>
+        <color>
+          <rgb>
+            <red>156</red>
+            <green>233</green>
+            <blue>154</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>lightblue</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>blueviolet</name>
+        </color>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>yellowgreen</name>
+        </color>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>violet</name>
+        </color>
+        <color>
+          <name>chartreuse</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="129">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 2</name>
+        <value>fixpoint</value>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 3</name>
+        <value>oscillation</value>
+        <coloring>
+          <palette>4</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>129</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- z^6 -->
+  <complex>
+    <info>
+      <name>z^6</name>
+      <description></description>
+    </info>
+    <iterator type="newton">
+      <function name="z^6">(z * z * z * z * z) + c</function>
+      <derivative></derivative>
+      <set type="julia" constant="-1+0i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <center>0</center>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <center>0</center>
+        <pixels>210</pixels>
+      </y>
+      <ppu>105</ppu>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>beige</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>SeaGreen</name>
+        </color>
+        <color>
+          <name>Aquamarine</name>
+        </color>
+        <color>
+          <name>Gainsboro</name>
+        </color>
+        <color>
+          <name>Gray</name>
+        </color>
+        <color>
+          <name>Khaki</name>
+        </color>
+        <color>
+          <name>Tan</name>
+        </color>
+        <color>
+          <name>BlanchedAlmond</name>
+        </color>
+        <color>
+          <name>Red</name>
+        </color>
+        <color>
+          <name>Green</name>
+        </color>
+        <color>
+          <name>Salmon</name>
+        </color>
+        <color>
+          <name>Gold</name>
+        </color>
+        <color>
+          <name>Goldenrod</name>
+        </color>
+        <color>
+          <name>Silver</name>
+        </color>
+        <color>
+          <rgb>
+            <red>156</red>
+            <green>233</green>
+            <blue>154</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>lightblue</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>blueviolet</name>
+        </color>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>yellowgreen</name>
+        </color>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>violet</name>
+        </color>
+        <color>
+          <name>chartreuse</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="129">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 2</name>
+        <value>fixpoint</value>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 3</name>
+        <value>oscillation</value>
+        <coloring>
+          <palette>4</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>129</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- z^7 -->
+  <complex>
+    <info>
+      <name>z^7</name>
+      <description></description>
+    </info>
+    <iterator type="newton">
+      <function name="z^7">(z * z * z * z * z) + c</function>
+      <derivative></derivative>
+      <set type="julia" constant="-1+0i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <center>0</center>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <center>0</center>
+        <pixels>210</pixels>
+      </y>
+      <ppu>105</ppu>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>beige</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>SeaGreen</name>
+        </color>
+        <color>
+          <name>Aquamarine</name>
+        </color>
+        <color>
+          <name>Gainsboro</name>
+        </color>
+        <color>
+          <name>Gray</name>
+        </color>
+        <color>
+          <name>Khaki</name>
+        </color>
+        <color>
+          <name>Tan</name>
+        </color>
+        <color>
+          <name>BlanchedAlmond</name>
+        </color>
+        <color>
+          <name>Red</name>
+        </color>
+        <color>
+          <name>Green</name>
+        </color>
+        <color>
+          <name>Salmon</name>
+        </color>
+        <color>
+          <name>Gold</name>
+        </color>
+        <color>
+          <name>Goldenrod</name>
+        </color>
+        <color>
+          <name>Silver</name>
+        </color>
+        <color>
+          <rgb>
+            <red>156</red>
+            <green>233</green>
+            <blue>154</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>lightblue</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>blueviolet</name>
+        </color>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>yellowgreen</name>
+        </color>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>violet</name>
+        </color>
+        <color>
+          <name>chartreuse</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="129">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>root 2</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 2</name>
+        <value>fixpoint</value>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="orbit check">
+        <name>root 3</name>
+        <value>oscillation</value>
+        <coloring>
+          <palette>4</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>129</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- flower power -->
+	<complex>
+		<info>
+			<name>flower power</name>
+			<description>From the book "Fractal Programming in C".</description></info>
+    <iterator type="generic">
+      <function name="cos">cos</function>
+      <set type="mandelbrot"/></iterator>
+    <coordinates>
+      <x>
+        <center>1.037559</center>
+          <pixels>600</pixels></x>
+        <y>
+          <center>1.810884</center>
+        	  <pixels>210</pixels></y>
+      <ppu>700</ppu></coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name></color></palette>
+      <palette>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>purple</name></color>
+        <color>
+          <name>seagreen</name></color>
+        <color>
+          <name>yellow</name></color>
+        <color>
+          <name>greenyellow</name></color>
+        <color>
+          <name>aquamarine</name></color>
+        <color>
+          <name>gainsboro</name></color>
+        <color>
+          <name>gray</name></color>
+        <color>
+          <name>khaki</name></color>
+        <color>
+          <name>orange</name></color>
+        <color>
+          <name>tan</name></color>
+        <color>
+          <name>blanchedalmond</name></color>
+        <color>
+          <name>red</name></color>
+        <color>
+          <name>green</name></color>
+        <color>
+          <name>salmon</name></color>
+        <color>
+          <name>gold</name></color>
+        <color>
+          <name>goldenrod</name></color>
+        <color>
+          <name>silver</name></color>
+        <color>
+          <name>maroon</name></color>
+        <color>
+          <name>lightblue</name></color></palette></palettes>
+		<fates iterations="128">      			
+			<fate type="escapee">
+				<threshold>100</threshold>
+				<infinity>								
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+			<fate type="survivor">
+        			<iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- flower power -->
+	<complex>
+		<info>
+			<name>flower power</name>
+			<description>From the book "Fractal Programming in C".</description></info>
+    <iterator type="generic">
+      <function name="cos">cos</function>
+      <set type="julia" constant="1+1i"/></iterator>
+    <coordinates>
+      <x>
+        <center>1.037559</center>
+        <pixels>600</pixels></x>
+      <y>
+        <center>1.810884</center>
+        <pixels>210</pixels></y>
+      <ppu>70</ppu></coordinates>
+    <palettes>
+			<palette>
+				<color>
+					<name>black</name></color></palette>
+      <palette>
+        <color>
+          <name>beige</name></color>
+        <color>
+          <name>gold</name></color>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>silver</name></color>
+        <color>
+          <name>orange</name></color></palette></palettes>
+		<fates iterations="128">
+      			<fate type="escapee">
+				<threshold>100</threshold>
+				<infinity>									
+				<coloring>
+					<palette>1</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+			<fate type="survivor">
+        			<iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>
+  <!-- flower power 2 -->
+	<complex>
+		<info>
+			<name>flower power 2</name>
+			<description>From the book "Fractal Programming in C".</description></info>
+    <iterator type="generic">
+      <function name="cos">cos</function>
+      <set type="julia" constant="1.3+0.03i"/></iterator>
+    <coordinates>
+      <x>
+        <center>1.037559</center>
+        <pixels>600</pixels></x>
+      <y>
+        <center>1.810884</center>
+        <pixels>210</pixels></y>
+      <ppu>7000</ppu></coordinates>
+    <palettes>
+			<palette>
+				<color>
+					<name>black</name></color></palette>
+      <palette>
+        <color>
+          <name>beige</name></color>
+        <color>
+          <name>gold</name></color>
+        <color>
+          <name>blue</name></color>
+        <color>
+          <name>silver</name></color>
+        <color>
+          <name>orange</name></color></palette></palettes>
+		<fates iterations="128">
+      <fate type="escapee">
+				<threshold>100</threshold>
+				<infinity>									
+					<coloring>
+						<palette>1</palette>
+						<algorithm>remainder</algorithm>
+						<orbitNumbering>down</orbitNumbering></coloring></infinity></fate>
+			<fate type="survivor">
+        			<iterations>128</iterations>        			
+				<coloring>
+					<palette>0</palette>
+					<algorithm>remainder</algorithm>
+					<orbitNumbering>down</orbitNumbering></coloring></fate></fates></complex>	
+  <!-- BOF map 3 -->
+	<complex>
+    <info>
+      <name>BOF map 3</name>
+      <description>potts-spins model i</description></info>
+    <iterator type="generic">
+      <function name="potts-spins model i"></function>
+      <set type="julia" constant="4+0i"/></iterator>
+    <coordinates>
+      <x>
+        <min>-5.5</min>
+        <max>7.9</max>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <min>-5</min>
+        <max>5</max>
+        <pixels>210</pixels>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+        <color>
+          <name>royalblue</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>red</name>
+        </color>
+        <color>
+          <name>orangered</name>
+        </color>
+        <color>
+          <name>tomato</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>aquamarine</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>43</red>
+            <green>240</green>
+            <blue>21</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>49</red>
+            <green>240</green>
+            <blue>15</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>55</red>
+            <green>245</green>
+            <blue>9</blue>
+          </rgb>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>          
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>     
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>		
+    </fates>
+  </complex>
+  <!-- [potts spins/julia] BOF map 4 -->
+	<complex>
+    <info>
+      <name>BOF map 4</name>
+      <description></description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model i"></function>
+      <set type="julia" constant="-0.1+0i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <min>0.42</min>
+        <max>1.98</max>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <min>2.5</min>
+        <max>3.67</max>
+        <pixels>210</pixels>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+        <color>
+          <name>royalblue</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>red</name>
+        </color>
+        <color>
+          <name>orangered</name>
+        </color>
+        <color>
+          <name>tomato</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>aquamarine</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>43</red>
+            <green>240</green>
+            <blue>21</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>49</red>
+            <green>240</green>
+            <blue>15</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>55</red>
+            <green>245</green>
+            <blue>9</blue>
+          </rgb>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- [potts spins/julia] BOF map 5 -->
+	<complex>
+    <info>
+      <name>BOF map 5</name>
+      <description></description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model i"></function>
+      <set type="julia" constant="1.09582+2.07142i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <min>-0.5</min>
+        <max>1.5</max>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <min>-1.45</min>
+        <max>0.7</max>
+        <pixels>210</pixels>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+        <color>
+          <rgb>
+            <red>200</red>
+            <green>0</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <rgb>
+            <red>100</red>
+            <green>25</green>
+            <blue>100</blue>
+          </rgb>
+        </color>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <rgb>
+            <red>240</red>
+            <green>240</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>aquamarine</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>43</red>
+            <green>240</green>
+            <blue>21</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>49</red>
+            <green>240</green>
+            <blue>15</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>55</red>
+            <green>245</green>
+            <blue>9</blue>
+          </rgb>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- [potts spins/julia] BOF map 6 (Scorpio large) -->
+	<complex>
+    <info>
+      <name>BOF map 6 (Scorpio large)</name>
+      <description></description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model i"></function>
+      <set type="julia" constant="1.21+0.01i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <min>-2.1</min>
+        <max>1.5</max>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <min>-0.5</min>
+        <max>0.5625</max>
+        <pixels>210</pixels>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>200</red>
+            <green>0</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <rgb>
+            <red>100</red>
+            <green>25</green>
+            <blue>100</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <rgb>
+            <red>240</red>
+            <green>240</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- [potts spins/julia] BOF map 6 (Scorpio small) -->
+	<complex>
+    <info>
+      <name>BOF map 6 (Scorpio small)</name>
+      <description></description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model i"></function>
+      <set type="julia" constant="1.21+0.01i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <center>-1.1</center>
+        <pixels>200</pixels>
+      </x>
+      <y>
+        <center>0.12</center>
+        <pixels>123</pixels>
+      </y>
+      <ppu>120</ppu>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>200</red>
+            <green>0</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <rgb>
+            <red>100</red>
+            <green>25</green>
+            <blue>100</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <rgb>
+            <red>240</red>
+            <green>240</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+<!-- -->
+<complex>
+  <info>
+    <name>BOF map 6 (Scorpio small:  tweety colors)</name>
+    <description></description>
+  </info>
+  <iterator type="generic">
+    <function name="potts-spins model i"></function>
+    <set type="julia" constant="1.21+0.01i" />
+  </iterator>
+  <coordinates>
+    <x>
+      <center>-1.1</center>
+      <pixels>200</pixels>
+    </x>
+    <y>
+      <center>0.12</center>
+      <pixels>123</pixels>
+    </y>
+    <ppu>120</ppu>
+  </coordinates>
+  <palettes>
+    <palette>
+      <color>
+        <name>black</name>
+      </color>
+    </palette>
+    <palette>
+      <color>
+        <name>green</name>
+      </color>
+      <color>
+        <name>lightgreen</name>
+      </color>
+    </palette>
+    <palette>
+      <color>
+        <name>purple</name>
+      </color>
+      <color>
+        <rgb>
+          <red>100</red>
+          <green>25</green>
+          <blue>100</blue>
+        </rgb>
+      </color>
+    </palette>
+    <palette>
+      <color>
+        <name>azure</name>
+      </color>
+      <color>
+	<name>skyblue</name>
+      </color>
+    </palette>
+  </palettes>
+  <fates iterations="128">
+    <fate type="escapee">
+      <threshold>100</threshold>
+      <infinity>
+        <coloring>
+          <palette>1</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </infinity>
+    </fate>
+    <fate type="fixpoint">
+      <name>fixpoint 1</name>
+      <value>1+0i</value>
+      <metric type="magnitude" />
+      <coloring>
+        <palette>2</palette>
+        <algorithm>remainder</algorithm>
+        <orbitNumbering>down</orbitNumbering>
+      </coloring>
+    </fate>
+    <fate type="critical value">
+      <name>critical value 0</name>
+      <value>0+0i</value>
+      <epsilon>
+        <value>0.0003</value>
+        <comparison>le</comparison>
+      </epsilon>
+      <metric type="magnitude" />
+      <coloring>
+        <palette>3</palette>
+        <algorithm>remainder</algorithm>
+        <orbitNumbering>down</orbitNumbering>
+      </coloring>
+    </fate>
+    <fate type="survivor">
+      <iterations>128</iterations>
+      <coloring>
+        <palette>0</palette>
+        <algorithm>remainder</algorithm>
+        <orbitNumbering>down</orbitNumbering>
+      </coloring>
+    </fate>
+  </fates>
+</complex>
+  <!-- -->
+  <complex>
+    <info>
+      <name>BOF map 6 (Scorpio small:  andré colors)</name>
+      <description></description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model i"></function>
+      <set type="julia" constant="1.21+0.01i" />
+    </iterator>
+    <coordinates>
+      <x>
+        <center>-1.1</center>
+        <pixels>200</pixels>
+      </x>
+      <y>
+        <center>0.12</center>
+        <pixels>123</pixels>
+      </y>
+      <ppu>120</ppu>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <name>gold</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>maroon</name>
+        </color>
+        <color>
+          <rgb>
+            <red>200</red>
+            <green>0</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>lightblue</name>
+        </color>
+        <color>
+          <name>skyblue</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude" />
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude" />
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- [potts spins/julia] scorpio -->
+	<complex>
+    <info>
+      <name>scorpio</name>
+      <description>BOF</description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model i"></function>
+      <set type="julia" constant="1.21+0.01i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <center>-0.395</center>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <center>0</center>
+        <pixels>210</pixels>
+      </y>
+      <ppu>83</ppu>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>200</red>
+            <green>0</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <rgb>
+            <red>180</red>
+            <green>25</green>
+            <blue>180</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <rgb>
+            <red>240</red>
+            <green>240</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- [potts spins/julia] spirals -->
+	<complex>
+    <info>
+      <name>spirals</name>
+      <description>BOF</description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model i"></function>
+      <set type="julia" constant="-0.1+0i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <center>-1.05</center>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <center>0</center>
+        <pixels>210</pixels>
+      </y>
+      <ppu>75</ppu>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>red</name>
+        </color>
+        <color>
+          <name>orangered</name>
+        </color>
+        <color>
+          <name>tomato</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>blue</name>
+        </color>
+        <color>
+          <name>blueviolet</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <rgb>
+            <red>240</red>
+            <green>240</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- [potts spins/mandelbrot] map 01 -->
+	<complex>		
+    <info>
+      <name>map 01</name>
+      <description>BOF</description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model i"></function>
+      <set type="mandelbrot"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <min>-1.51</min>
+        <max>4.5</max>
+        <pixels>600</pixels>
+      </x>
+      <y>
+        <min>-2.25</min>
+        <max>2.25</max>
+        <pixels>210</pixels>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>200</red>
+            <green>0</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <rgb>
+            <red>100</red>
+            <green>25</green>
+            <blue>100</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <rgb>
+            <red>240</red>
+            <green>240</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- [potts spins/mandelbrot] map 02 -->
+	<complex>
+    <info>
+      <name>map 02</name>
+      <description>BOF</description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model i"></function>
+      <set type="mandelbrot"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <pixels>600</pixels>
+        <min>1.86</min>
+        <max>2.21</max>
+      </x>
+      <y>
+        <pixels>210</pixels>
+        <min>1.51</min>
+        <max>1.77</max>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>255</red>
+            <green>255</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>0</red>
+            <green>255</green>
+            <blue>64</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>lightblue</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- [potts spins/mandelbrot] map 11 -->
+	<complex>
+    <info>
+      <name>map 11</name>
+      <description>BOF</description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model i"></function>
+      <set type="mandelbrot"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <pixels>600</pixels>
+        <min>1.2882</min>
+        <max>1.2963</max>
+      </x>
+      <y>
+        <pixels>210</pixels>
+        <min>0.9695</min>
+        <max>0.9753</max>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>255</red>
+            <green>255</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>0</red>
+            <green>255</green>
+            <blue>64</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>lightblue</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="61">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+ <!-- [potts spins/mandelbrot] map 13 -->
+	<complex>
+    <info>
+      <name>map 13</name>
+      <description>BOF</description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model i"></function>
+      <set type="mandelbrot"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <pixels>600</pixels>
+        <min>1.290681</min>
+        <max>1.291136</max>
+      </x>
+      <y>
+        <pixels>210</pixels>
+        <min>0.97277</min>
+        <max>0.973098</max>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>255</red>
+            <green>255</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>0</red>
+            <green>255</green>
+            <blue>64</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>lightblue</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="75">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- [potts spins/julia] map 07 -->
+	<complex>
+    <info>
+      <name>map 7</name>
+      <description>BOF</description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model ii"></function>
+      <set type="julia" constant="2+0i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <pixels>600</pixels>
+        <min>-1.5</min>
+        <max>1.5</max>
+      </x>
+      <y>
+        <pixels>210</pixels>
+        <min>-11</min>
+        <max>11</max>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>255</red>
+            <green>255</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>0</red>
+            <green>255</green>
+            <blue>64</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>blanchedalmond</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>50</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- [potts spins/julia] map 08 -->
+  <complex>
+    <info>
+      <name>map 8</name>
+      <description>BOF</description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model ii"></function>
+      <set type="julia" constant="1.2+2i"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <pixels>600</pixels>
+        <min>-3.2</min>
+        <max>3.8</max>
+      </x>
+      <y>
+        <pixels>210</pixels>
+        <min>-3.3</min>
+        <max>1.9</max>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>200</red>
+            <green>0</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <name>maroon</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <rgb>
+            <red>100</red>
+            <green>25</green>
+            <blue>100</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>yellow</name>
+        </color>
+        <color>
+          <rgb>
+            <red>240</red>
+            <green>240</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="128">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- [potts spins/mandelbrot] map 14 -->
+	<complex>
+    <info>
+      <name>map 14</name>
+      <description>BOF</description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model ii"></function>
+      <set type="mandelbrot"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <pixels>600</pixels>
+        <min>1.9116</min>
+        <max>1.9784</max>
+      </x>
+      <y>
+        <pixels>210</pixels>
+        <min>0.88</min>
+        <max>0.93</max>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>255</red>
+            <green>255</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>0</red>
+            <green>255</green>
+            <blue>64</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>blanchedalmond</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="31">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.0003</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+  <!-- [potts spins/mandelbrot] map 16 -->
+	<complex>
+    <info>
+      <name>map 16</name>
+      <description>BOF</description>
+    </info>
+    <iterator type="generic">
+      <function name="potts-spins model ii"></function>
+      <set type="mandelbrot"/>
+    </iterator>
+    <coordinates>
+      <x>
+        <pixels>600</pixels>
+        <min>-1.2</min>
+        <max>3.2</max>
+      </x>
+      <y>
+        <pixels>210</pixels>
+        <min>-1.65</min>
+        <max>1.65</max>
+      </y>
+    </coordinates>
+    <palettes>
+      <palette>
+        <color>
+          <name>black</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <rgb>
+            <red>255</red>
+            <green>255</green>
+            <blue>0</blue>
+          </rgb>
+        </color>
+        <color>
+          <rgb>
+            <red>0</red>
+            <green>255</green>
+            <blue>64</blue>
+          </rgb>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>purple</name>
+        </color>
+        <color>
+          <name>blue</name>
+        </color>
+      </palette>
+      <palette>
+        <color>
+          <name>orange</name>
+        </color>
+        <color>
+          <name>blanchedalmond</name>
+        </color>
+      </palette>
+    </palettes>
+    <fates iterations="31">
+      <fate type="escapee">
+        <threshold>100</threshold>
+        <infinity>
+          <coloring>
+            <palette>1</palette>
+            <algorithm>remainder</algorithm>
+            <orbitNumbering>down</orbitNumbering>
+          </coloring>
+        </infinity>
+      </fate>
+      <fate type="fixpoint">
+        <name>fixpoint 1</name>
+        <value>1+0i</value>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>2</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="critical value">
+        <name>critical value 0</name>
+        <value>0+0i</value>
+        <epsilon>
+          <value>0.000001</value>
+          <comparison>le</comparison>
+        </epsilon>
+        <metric type="magnitude"/>
+        <coloring>
+          <palette>3</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+      <fate type="survivor">
+        <iterations>128</iterations>
+        <coloring>
+          <palette>0</palette>
+          <algorithm>remainder</algorithm>
+          <orbitNumbering>down</orbitNumbering>
+        </coloring>
+      </fate>
+    </fates>
+  </complex>
+	</plots>

@@ -1,0 +1,2441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plots>
+	<!-- mandelbrot peano curve:  13 intervals (built-in) -->
+	<vector>
+    <info>
+			<name>mandelbrot peano curve:  13 intervals (built-in)</name>
+			<description>From "the Fractal Geometry of Nature" (Mandelbrot).</description></info>
+    <parameters>
+      <generations>3</generations>
+      <length>400.0</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+        </palette>
+        <algorithm type="image">
+          <subtractor>1</subtractor>
+        </algorithm>
+      </coloring>
+    </parameters>
+		<rules type="builtin"></rules></vector>
+	<!-- mandelbrot peano curve:  13 intervals -->
+	<vector>
+    <info>
+			<name>mandelbrot peano curve:  13 intervals</name>
+      <description>From "the Fractal Geometry of Nature" (Mandelbrot).</description>
+    </info>
+    <parameters>
+      <generations>3</generations>
+      <length>400.0</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+        </palette>
+        <algorithm type="image">
+          <subtractor>2</subtractor>
+        </algorithm>
+       </coloring>
+    </parameters>
+		<rules type="lisp">
+ 	<![CDATA[
+  (let* (
+    (pi 3.141592653589793)
+	  (60-degrees (/ pi 3))
+    (sqrt-of-3 (sqrt 3))
+    (3sqrt3 (* 3 sqrt-of-3))
+    (pi-over-2 (/ pi 2))
+    (5pi-over-6 (/ (* 5 pi) 6))
+    (identity (lambda (x) x))
+    (project1.2 (lambda (x y) x))
+    (project3.4 (lambda (w x y z) y))
+    (len-div-3 (lambda (len) (/ len 3)))
+    (len-div-3sqrt3 (lambda (len) (/ len 3sqrt3)))
+    (angle-plus-60 
+      (lambda (angle flip) (+ angle (* flip 60-degrees))))
+    (angle-less-60 
+      (lambda (angle flip) (- angle (* flip 60-degrees))))
+    (angle-plus-5pi-over-6 
+      (lambda (angle flip) (+ angle (* flip 5pi-over-6))))
+    (angle-less-5pi-over-6
+      (lambda (angle flip) (- angle (* flip 5pi-over-6))))
+    (angle-less-pi-halves 
+      (lambda (angle flip) (- angle (* flip pi-over-2)))))
+	  (list
+     (list (list identity project1.2 project3.4 1 1)) ; seed
+     (list  ; rules
+      (list len-div-3 angle-plus-60 project3.4 -1 1) ; 1
+      (list len-div-3 angle-plus-60 project3.4 1 1) ; 2
+      (list len-div-3 project1.2 project3.4 1 1) ; 3
+      (list len-div-3 angle-less-60 project3.4 1 1) ; 4
+      (list len-div-3sqrt3 angle-plus-5pi-over-6 project3.4 1 1) ; 5
+      (list len-div-3sqrt3 angle-plus-5pi-over-6 project3.4 -1 1) ; 6
+      (list len-div-3sqrt3 angle-less-5pi-over-6 project3.4 -1 1) ; 7
+      (list len-div-3sqrt3 angle-less-pi-halves project3.4 -1 1) ; 8
+      (list len-div-3 project1.2 project3.4 1 1) ; 9
+      (list len-div-3sqrt3 angle-less-5pi-over-6 project3.4 1 1) ; 10
+      (list len-div-3sqrt3 angle-less-5pi-over-6 project3.4 -1 1) ; 11
+      (list len-div-3 project1.2 project3.4 -1 1) ; 12
+      (list len-div-3 project1.2 project3.4 1 1)))) ; 13
+    	]]>
+</rules></vector>
+  <!-- monkeys tree -->
+  <vector>
+    <info>
+      <name>monkeys tree</name>
+      <description>From "the Fractal Geometry of Nature" (Mandelbrot).</description>
+    </info>
+    <parameters>
+      <generations>3</generations>
+      <length>400.0</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+        </palette>
+        <algorithm type="image">
+          <subtractor>2</subtractor>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[
+      (let* (
+        (pi 3.141592653589793)
+	      (60-degrees (/ pi 3))
+        (sqrt-of-3 (sqrt 3))
+        (3sqrt3 (* 3 sqrt-of-3))
+        (pi-over-2 (/ pi 2))
+        (5pi-over-6 (/ (* 5 pi) 6))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        (len-div-3 (lambda (len) (/ len 3)))
+        (len-div-3sqrt3 (lambda (len) (/ len 3sqrt3)))
+        (angle-plus-60 
+          (lambda (angle flip) (+ angle (* flip 60-degrees))))
+        (angle-less-60 
+          (lambda (angle flip) (- angle (* flip 60-degrees))))
+        (angle-plus-5pi-over-6 
+          (lambda (angle flip) (+ angle (* flip 5pi-over-6))))
+        (angle-less-5pi-over-6
+          (lambda (angle flip) (- angle (* flip 5pi-over-6))))
+        (angle-less-pi-halves 
+          (lambda (angle flip) (- angle (* flip pi-over-2)))))
+	      (list
+         (list (list identity project1.2 project3.4 1 1)) ; seed
+         (list  ; rules
+          (list len-div-3 angle-plus-60 project3.4 -1 1) ; 1
+          (list len-div-3 angle-plus-60 project3.4 -1 -1) ; 2
+          (list len-div-3 project1.2 project3.4 1 1) ; 3
+          (list len-div-3 angle-less-60 project3.4 -1 -1) ; 4
+          (list len-div-3sqrt3 angle-plus-5pi-over-6 project3.4 -1 -1) ; 5
+          (list len-div-3sqrt3 angle-plus-5pi-over-6 project3.4 -1 1) ; 6
+          (list len-div-3sqrt3 angle-less-5pi-over-6 project3.4 1 -1) ; 7
+          (list len-div-3sqrt3 angle-less-pi-halves project3.4 1 -1) ; 8
+          (list len-div-3sqrt3 angle-less-pi-halves project3.4 1 1) ; 9
+          (list len-div-3 project1.2 project3.4 1 -1) ; 10
+          (list len-div-3 project1.2 project3.4 1 1)))) ; 11
+    	]]>
+    </rules>
+  </vector>
+  <!-- mandelbrot peano curve:  7 intervals -->
+  <vector>
+    <info>
+      <name>mandelbrot peano curve:  7 intervals</name>
+      <description>From "the Fractal Geometry of Nature" (Mandelbrot).</description>
+    </info>
+    <parameters>
+      <generations>4</generations>
+      <length>400.0</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>blue</name></color>
+          <color>
+            <name>gold</name></color>
+          <color>
+            <name>gray</name>
+          </color>
+        </palette>
+        <algorithm type="image">        
+          <subtractor>3</subtractor>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[
+      (let* (
+        (pi 3.141592653589793)
+	      (60-degrees (/ pi 3))
+        (pi-over-2 (/ pi 2))
+        (5pi-over-6 (/ (* 5 pi) 6))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        (len-div-3 (lambda (len) (/ len 3)))
+        (len-div-sqrt3 (lambda (len) (/ len (sqrt 3))))
+        (angle-plus-60 
+          (lambda (angle flip) (+ angle (* flip 60-degrees))))
+        (angle-less-60 
+          (lambda (angle flip) (- angle (* flip 60-degrees))))
+        (angle-less-5pi-over-6
+          (lambda (angle flip) (- angle (* flip 5pi-over-6)))))
+        ;
+	      (list
+         (list (list identity project1.2 project3.4 1 1)) ; seed
+         (list  ; rules
+          (list len-div-3 angle-plus-60 project3.4 -1 1) ; 1
+          (list len-div-3 angle-plus-60 project3.4 -1 -1) ; 2
+          (list len-div-3 project1.2 project3.4 -1 -1) ; 3    
+          (list len-div-3 angle-less-60 project3.4 -1 -1) ; 4    
+          (list len-div-sqrt3 angle-less-5pi-over-6 project3.4 1 -1) ; 5  
+          (list len-div-3 project1.2 project3.4 -1 1) ; 6
+          (list len-div-3 project1.2 project3.4 -1 -1)))) ; 7
+      ]]>
+    </rules>
+  </vector>
+  <!-- Winston's C Curve (one seed) -->
+	<vector>
+    <info>
+			<name>Winston's C Curve (1 seed)</name>
+			<description>From Winston's book.</description></info>
+    <parameters>
+      <generations>11</generations>
+      <length>400.0</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>1</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+		<rules type="lisp">
+ 	<![CDATA[
+  (let* (	
+    (pi 3.141592653589793)
+    (pi-over-4 (/ pi 4.0))
+    (sqrt-of-2 (sqrt 2.0))
+    (identity (lambda (x) x))
+    (project1.2 (lambda (x y) x))
+    (project3.4 (lambda (w x y z) y))
+    (len-div-sqrt-of-2 (lambda (len) (/ len sqrt-of-2)))
+    (angle-plus-pi (lambda (angle flip) (+ angle (* flip pi))))
+    (left-elbow (lambda (angle flip) (+ angle (* flip pi-over-4))))
+    (right-elbow (lambda (angle flip) (- angle (* flip pi-over-4))))
+    )
+    (list
+      (list ; seed (initiator)
+        (list identity project1.2 project3.4 1 -1) ; 1
+        ;(list identity angle-plus-pi project3.4 1 -1) ; 2
+        )
+      (list ; rules (generator)
+        (list len-div-sqrt-of-2 left-elbow project3.4 1 1) ; 1
+        (list len-div-sqrt-of-2 right-elbow project3.4 1 -1)))) ; 2
+  ]]></rules></vector>
+  <!-- c curve-->
+  <vector>
+    <info>
+      <name>c curve</name>
+      <description>From Winston's book.</description>
+    </info>
+    <parameters>
+      <generations>12</generations>
+      <length>325</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>5</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[
+  (let* (	
+    (pi 3.141592653589793)
+    (pi-over-4 (/ pi 4.0))
+    (45-degrees (/ pi 4))
+    (sqrt-of-2 (sqrt 2.0))
+    (identity (lambda (x) x))
+    (project1.2 (lambda (x y) x))
+    (project3.4 (lambda (w x y z) y))
+    (lenf (lambda (len) (/ (* len sqrt-of-2) 2)))
+    (angle-plus-pi (lambda (angle flip) (+ angle (* flip pi))))
+    (angle-minus-45 (lambda (angle flip) (- angle (* flip 45-degrees))))
+    (angle-plus-45 (lambda (angle flip) (+ angle (* flip 45-degrees))))
+    (left-elbow (lambda (angle flip) (+ angle (* flip pi-over-4))))
+    (right-elbow (lambda (angle flip) (- angle (* flip pi-over-4))))
+    )
+    (list
+      (list ; seed (initiator)
+        (list identity project1.2 project3.4 1 1) ; 1
+        ;(list identity angle-plus-45 project3.4 1 1) ; 2
+        )
+      (list ; rules (generator)
+        (list lenf angle-minus-45 project3.4 1 1) ; 1
+        (list lenf angle-plus-45 project3.4 1 1) ; 2
+        ))) ;
+  ]]>
+    </rules>
+  </vector>
+	<!-- Winston's C Curve (two seeds) -->
+	<vector>
+    <info>
+			<name>Winston's C Curve (2 seeds)</name>
+			<description>From Winston's book.</description></info>
+    <parameters>
+      <generations>10</generations>
+      <length>300.0</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>1</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+		<rules type="lisp">
+ 	<![CDATA[
+  (let* (	
+    (pi 3.141592653589793)
+    (pi-over-4 (/ pi 4.0))
+    (sqrt-of-2 (sqrt 2.0))
+    (identity (lambda (x) x))
+    (project1.2 (lambda (x y) x))
+    (project3.4 (lambda (w x y z) y))
+    (len-div-sqrt-of-2 (lambda (len) (/ len sqrt-of-2)))
+    (angle-plus-pi (lambda (angle flip) (+ angle (* flip pi))))
+    (left-elbow (lambda (angle flip) (+ angle (* flip pi-over-4))))
+    (right-elbow (lambda (angle flip) (- angle (* flip pi-over-4))))
+    )
+    (list
+      (list ; seed (initiator)
+      (list identity project1.2 project3.4 1 -1) ; 1
+      (list identity angle-plus-pi project3.4 1 -1) ; 2
+      ) 
+    (list ; rules (generator)
+      (list len-div-sqrt-of-2 left-elbow project3.4 1 1) ; 1
+      (list len-div-sqrt-of-2 right-elbow project3.4 1 -1)))) ; 2
+    	]]></rules></vector>
+  <!-- Koch snowflake -->
+  <vector>
+    <info>
+      <name>Koch snowflake</name>
+      <description>ubiquitous</description>
+    </info>
+    <parameters>
+      <generations>3</generations>
+      <length>300.0</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>0</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[
+      (let* (
+        (pi 3.141592653589793)
+        (pi-over-4 (/ pi 4.0))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        (len-div-3 (lambda (len) (/ len 3)))
+        (pi-over-3 (/ pi 3))
+        (2-pi-over-3 (* 2 pi-over-3))
+        )
+        (list
+	        (list ; seed (initiator)
+            (list identity project1.2 project3.4 1 1) ; 1
+            (list 
+              identity 
+              (lambda (angle flip)
+                (+ angle 2-pi-over-3))
+              project3.4 
+              1 
+              1) ; 2
+            (list
+                identity
+                (lambda (angle flip)
+                  (- angle 2-pi-over-3))
+                project3.4
+                1
+                1)) ; 3
+          (list ; rules (generator)
+            (list
+              len-div-3
+              project1.2
+              project3.4
+              1
+              1) ; 1
+            (list
+              len-div-3
+              (lambda (angle flip-factor)
+                (- angle (* pi-over-3
+                            flip-factor)))
+              project3.4
+              1
+              1) ; 2
+            (list
+              len-div-3
+              (lambda (angle flip-factor)
+                (+ angle (* pi-over-3
+                            flip-factor)))
+              project3.4
+              1
+              1) ; 3
+            (list
+              len-div-3
+              project1.2
+              project3.4
+              1
+              1)))) ; 4
+    	]]>
+    </rules>
+  </vector>
+  <!-- bee hive -->
+  <vector>
+    <info>
+      <name>bee hive</name>
+      <description></description>
+    </info>
+    <parameters>
+      <generations>6</generations>
+      <length>325</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>1</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp" continuous="no">
+      <![CDATA[
+      (let* (
+        (pi 3.141592653589793)
+        (pi-over-4 (/ pi 4.0))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        
+        (project3.4 (lambda (w x y z) y))
+        
+        (pi-over-3 (/ pi 3))
+        (30-degrees (/ pi 6))
+        (cos-30 (cos 30-degrees))
+        (lenf (lambda (len) (/ len 2 cos-30)))
+        (60-degrees (/ pi 3))
+        (90-degrees (/ pi 2))
+        (120-degrees (/ pi 3))
+        (150-degrees (* 5 30-degrees))
+        (2-pi-over-3 (* 2 pi-over-3))
+        (330-degrees (+ pi (* 30-degrees 5)))
+        (angle-plus-30
+          (lambda (angle flip)
+            (+ angle (* flip 30-degrees))))
+        (angle-minus-30
+          (lambda (angle flip)
+            (- angle (* flip 30-degrees))))            
+        (angle-minus-90
+          (lambda (angle flip)
+            (- angle (* flip 90-degrees))))
+        (angle-minus-120
+          (lambda (angle flip)
+            (- angle (* flip 120-degrees))))     
+        (angle-plus-330
+          (lambda (angle flip)
+            (+ angle (* flip 330-degrees))))
+       (angle-plus-150
+          (lambda (angle flip)
+            (+ angle (* flip 150-degrees)))) 
+        (move-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (/ len 2 cos-30))
+              (angle (+ (* flip angle) 90-degrees))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (move-origin-minus-30
+          (lambda (len angle origin flip)
+            (let (
+              (len (/ len 2 cos-30))
+              (angle (- (* flip angle) 30-degrees))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))               
+        )
+        (list
+	        (list ; seed (initiator)
+            (list identity project1.2 project3.4 1 1) ; 1
+            ) ; 
+          (list ; rules (generator)
+            (list
+              lenf
+              angle-plus-30
+              project3.4
+              1
+              1) ; 1
+            (list
+              lenf
+              angle-minus-90
+              move-origin
+              1
+              1) ; 2
+            (list
+              lenf
+              angle-plus-150
+              move-origin-minus-30
+              1
+              1) ; 3
+          ))) ; 4
+    	]]>
+    </rules>
+  </vector>
+  <!-- Sierpiński's arrowhead -->
+  <vector>
+    <info>
+      <name>Sierpiński's arrowhead</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot)</description>
+    </info>
+    <parameters>
+      <generations>6</generations>
+      <length>450.0</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>1</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[
+      (let* (
+        (pi 3.141592653589793)
+        (len-div-2 (lambda (len) (/ len 2)))
+        (60-degrees (/ pi 3))
+        (angle-plus-60 
+          (lambda (angle flip) (+ angle (* flip 60-degrees))))
+        (angle-minus-60 
+          (lambda (angle flip) (- angle (* flip 60-degrees))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list (list identity project1.2 project3.4 1 1)) ; seed
+          (list ; rules (generator)
+            (list len-div-2 angle-plus-60 project3.4 1 -1) ; 1
+            (list len-div-2 project1.2 project3.4 1 1) ; 2
+            (list len-div-2 angle-minus-60 project3.4 1 -1)))) ; 3
+      ]]></rules></vector>
+  <!-- koch pyramid -->
+  <vector>
+    <info>
+      <name>Koch pyramid</name>
+      <description>ubiquitous</description>
+    </info>
+    <parameters>
+      <generations>4</generations>
+      <length>700</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>1</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[
+      (let* (
+        (pi 3.141592653589793)
+        (len-div-3 (lambda (len) (/ len 3)))
+        (90-degrees (/ pi 2))
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list (list identity project1.2 project3.4 1 1)) ; seed
+          (list ; rules (generator)
+            (list len-div-3 project1.2 project3.4 1 1) ; 1
+            (list len-div-3 angle-plus-90 project3.4 1 1) ; 2
+            (list len-div-3 project1.2 project3.4 1 1) ; 3
+            (list len-div-3 angle-minus-90 project3.4 1 1) ; 4
+            (list len-div-3 project1.2 project3.4 1 1) ; 5
+            )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- Sierpiński's carpet -->
+  <vector>
+    <info>
+      <name>Sierpiński's carpet</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 144</description>
+    </info>
+    <parameters>
+      <generations>2</generations>
+      <length>125</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>0</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[            
+     (let* (
+        (pi 3.141592653589793)
+        (pi-over-2 (/ pi 2))
+        (pi-over-4 (/ pi 4))
+        (sqrt-2 (sqrt 2))
+        (len-div-3 (lambda (len) (/ len 3)))
+        (90-degrees pi-over-2)
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (angle-minus-180
+          (lambda (angle flip) (- angle (* flip pi))))
+        (move-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (* 2 (/ len 3) sqrt-2))
+              (angle (+ (* flip angle) pi-over-2 pi-over-4))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (revert-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (* 2 (/ len 3) sqrt-2))
+              (angle (- (* flip angle) pi-over-2 pi-over-4))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (origin-scale-by-3
+          (lambda (len angle origin flip)
+            (let (
+              (angle (* flip angle))
+              (new-len (* 3 (/ len 3)))
+              )
+              (cons
+                (+ (car origin) (* new-len (cos angle)))
+                (+ (cdr origin) (* new-len (sin angle)))))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list ; seed
+            (list identity project1.2 project3.4 1 1) ; 1
+            (list identity angle-minus-90 project3.4 1 1) ; 2
+            (list identity angle-minus-180 project3.4 1 1) ; 3
+            (list identity angle-plus-90 project3.4 1 1)) ; 4
+          (list ; rules (generator)
+            (list len-div-3 project1.2 move-origin 1 1) ; 1                 
+            (list len-div-3 angle-minus-90 project3.4 1 1) ; 2
+            (list len-div-3 angle-minus-180 project3.4 1 1) ; 3
+            (list len-div-3 angle-plus-90 project3.4 1 1) ; 4
+            (list len-div-3 project1.2 origin-scale-by-3 1 1) ; 5
+            (list len-div-3 angle-minus-90 project3.4 1 1) ; 6
+            (list len-div-3 angle-minus-180 project3.4 1 1) ; 7
+            (list len-div-3 angle-plus-90 project3.4 1 1) ; 8
+            (list len-div-3 project1.2 project3.4 1 1) ; 9 (backtrack)
+	          (list len-div-3 project1.2 revert-origin 1 1) ; 10
+            (list len-div-3 project1.2 project3.4 1 1) ; 11
+            (list len-div-3 project1.2 project3.4 1 1)))) ; 12                              
+      ]]></rules></vector>
+  <!-- island generator -->
+  <vector>
+    <info>
+      <name>island generator</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 117</description>
+    </info>
+    <parameters>
+      <generations>2</generations>
+      <length>250</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>0</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[            
+     (let* (
+        (pi 3.141592653589793)
+        (pi-over-2 (/ pi 2))
+        (pi-over-4 (/ pi 4))
+        (sqrt-2 (sqrt 2))
+        (len-div-8 (lambda (len) (/ len 8)))
+        (90-degrees pi-over-2)
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (angle-minus-180
+          (lambda (angle flip) (- angle (* flip pi))))
+        (move-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (/ len 8))
+              (angle (+ (* flip angle) pi-over-2))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (revert-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (/ len 8))
+              (angle (- (* flip angle) pi-over-2))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (origin-scale-by-3
+          (lambda (len angle origin flip)
+            (let (
+              (angle (* flip angle))
+              (new-len (* 3 (/ len 3)))
+              )
+              (cons
+                (+ (car origin) (* new-len (cos angle)))
+                (+ (cdr origin) (* new-len (sin angle)))))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list ; seed
+            (list identity project1.2 project3.4 1 1) ; 1
+            (list identity angle-minus-90 project3.4 1 1) ; 2
+            (list identity angle-minus-180 project3.4 1 1) ; 3
+            (list identity angle-plus-90 project3.4 1 1) ; 4
+            )
+          (list ; rules (generator)
+            (list len-div-8 project1.2 project3.4 1 1) ; 1            
+            (list len-div-8 angle-plus-90 move-origin 1 1) ; 2
+            (list len-div-8 angle-plus-90 project3.4 1 1) ; 3
+            (list len-div-8 project1.2 project3.4 1 1) ; 4
+            (list len-div-8 angle-minus-90 project3.4 1 1) ; 5
+            (list len-div-8 angle-minus-90 project3.4 1 1) ; 6
+            (list len-div-8 angle-minus-180 project3.4 1 1) ; 7
+            (list len-div-8 project1.2 revert-origin 1 1) ; 8
+            (list len-div-8 project1.2 project3.4 1 1) ; 9
+            (list len-div-8 angle-plus-90 project3.4 1 1) ; 10
+            (list len-div-8 project1.2 project3.4 1 1) ; 11
+            (list len-div-8 angle-minus-90 project3.4 1 1) ; 12
+            (list len-div-8 project1.2 project3.4 1 1) ; 13
+            (list len-div-8 project1.2 project3.4 1 1) ; 14 
+            (list len-div-8 project1.2 project3.4 1 1) ; 15
+            (list len-div-8 project1.2 project3.4 1 1) ; 16 
+          )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- islands and lakes -->
+  <vector>
+    <info>
+      <name>islands and lakes</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 121</description>
+    </info>
+    <parameters>
+      <generations>2</generations>
+      <length>250</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>0</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[            
+     (let* (
+        (pi 3.141592653589793)
+        (pi-over-2 (/ pi 2))
+        (pi-over-4 (/ pi 4))
+        (sqrt-2 (sqrt 2))
+        (len-div-6 (lambda (len) (/ len 6)))
+        (90-degrees pi-over-2)
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (angle-minus-180
+          (lambda (angle flip) (- angle (* flip pi))))
+        (move-origin
+          (lambda (len angle origin flip)
+            (let (
+              (new-len (len-div-6 len)) ;to do:  this doesn't work when named len
+              ;(len (/ len 6))
+              (angle (+ (* flip angle) pi-over-2))
+              )
+              (cons
+                (+ (car origin) (* new-len (cos angle)))
+                (+ (cdr origin) (* new-len (sin angle)))))))
+        (revert-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (/ len 6))
+              (angle (- (* flip angle) pi-over-2))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list ; seed
+            (list identity project1.2 project3.4 1 1) ; 1
+            (list identity angle-minus-90 project3.4 1 1) ; 2
+            (list identity angle-minus-180 project3.4 1 1) ; 3
+            (list identity angle-plus-90 project3.4 1 1) ; 4
+            )
+          (list ; rules (generator)
+            (list len-div-6 project1.2 project3.4 1 1) ; 1              
+            (list len-div-6 angle-plus-90 move-origin 1 1) ; 2
+            (list len-div-6 project1.2 project3.4 1 1) ; 3
+            (list len-div-6 project1.2 project3.4 1 1) ; 4
+            (list len-div-6 angle-minus-90 project3.4 1 1) ; 5
+            (list len-div-6 angle-minus-180 project3.4 1 1)
+            (list len-div-6 angle-minus-180 project3.4 1 1)
+            (list len-div-6 project1.2 revert-origin 1 1)
+            (list len-div-6 project1.2 project3.4 1 1)
+            (list len-div-6 angle-minus-90 revert-origin 1 1)
+            (list len-div-6 project1.2 project3.4 1 1)
+            (list len-div-6 project1.2 project3.4 1 1)
+            (list len-div-6 angle-plus-90 project3.4 1 1)
+            (list len-div-6 angle-minus-180 project3.4 1 1)
+            (list len-div-6 angle-minus-180 project3.4 1 1)
+            (list len-div-6 project1.2 move-origin 1 1)
+            (list len-div-6 project1.2 project3.4 1 1)
+            (list len-div-6 project1.2 project3.4 1 1)           
+          )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- islands #2 -->
+  <vector>
+    <info>
+      <name>islands #2</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 118</description>
+    </info>
+    <parameters>
+      <generations>2</generations>
+      <length>250</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>0</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[            
+     (let* (
+        (pi 3.141592653589793)
+        (pi-over-2 (/ pi 2))
+        (pi-over-4 (/ pi 4))
+        (sqrt-2 (sqrt 2))
+        (lenf (lambda (len) (/ len 8)))
+        (90-degrees pi-over-2)
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (angle-minus-180
+          (lambda (angle flip) (- angle (* flip pi))))
+        (move-origin
+          (lambda (len angle origin flip)
+            (let (
+              ;(len (len-div-6 len)) ;to do:  this doesn't work, but it should
+              (len (/ len 8))
+              (angle (+ (* flip angle) pi-over-2))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (revert-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (/ len 8))
+              (angle (- (* flip angle) pi-over-2))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list ; seed
+            (list identity project1.2 project3.4 1 1) ; 1
+            (list identity angle-minus-90 project3.4 1 1) ; 2
+            (list identity angle-minus-180 project3.4 1 1) ; 3
+            (list identity angle-plus-90 project3.4 1 1) ; 4
+            )
+          (list ; rules (generator)
+            (list lenf project1.2 project3.4 1 1) ;1              
+            (list lenf angle-plus-90 move-origin 1 1) ;2
+            (list lenf angle-plus-90 project3.4 1 1) ;3
+            (list lenf project1.2 project3.4 1 1) ;4
+            (list lenf project1.2 project3.4 1 1) ;5
+            (list lenf angle-minus-90 project3.4 1 1) ;6
+            (list lenf angle-minus-90 project3.4 1 1) ;7
+            (list lenf angle-minus-180 project3.4 1 1) ;8
+            (list lenf angle-minus-180 project3.4 1 1) ;9
+            (list lenf project1.2 revert-origin 1 1) ;10
+            (list lenf project1.2 project3.4 1 1) ;11
+            (list lenf project1.2 project3.4 1 1) ;12
+            (list lenf project1.2 project3.4 1 1) ;13
+            (list lenf project1.2 project3.4 1 1) ;14
+            (list lenf project1.2 project3.4 1 1) ;15
+            (list lenf project1.2 project3.4 1 1) ;16            
+          )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- Sierpiński's gasket -->
+  <vector>
+    <info>
+      <name>Sierpiński's gasket</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 144.  This should be fixed to not overwrite vectors.</description>
+    </info>
+    <parameters>
+      <generations>3</generations>
+      <length>450</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>1</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[
+      (let* (
+        (pi 3.141592653589793)
+        (len-div-2 (lambda (len) (/ len 2)))
+        (60-degrees (/ pi 3))
+        (120-degrees (* 2 60-degrees))
+        (180-degrees (* 3 60-degrees))
+        (120-degree-f 
+          (lambda (op) 
+            (lambda (angle flip) 
+              (op angle (* flip 120-degrees)))))
+        ;(angle-plus-120 (120-degree-f +))
+        ;(angle-minus-120 (120-degree-f -))
+        (angle-plus-120 
+          (lambda (angle flip)
+            (+ angle (* flip 120-degrees))))
+        (angle-minus-120 
+          (lambda (angle flip)
+            (- angle (* flip 120-degrees))))
+        (angle-plus-60
+          (lambda (angle flip)
+            (+ angle (* flip 60-degrees))))
+        (angle-minus-60
+          (lambda (angle flip)
+            (- angle (* flip 60-degrees))))            
+        (angle-minus-180
+          (lambda (angle flip)
+            (- angle (* flip 180-degrees))))            
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list 
+            (list identity project1.2 project3.4 1 1) ; seed
+            (list identity angle-plus-120 project3.4 1 1)
+            (list identity angle-minus-120 project3.4 1 1)
+            )
+          (list ; rules (generator)
+            (list len-div-2 project1.2 project3.4 1 1) ; 1
+            (list len-div-2 angle-plus-120 project3.4 1 1) ; 1
+            (list len-div-2 project1.2 project3.4 1 1) ; 1
+            (list len-div-2 angle-minus-120 project3.4 1 1)
+            (list len-div-2 project1.2 project3.4 1 1)
+            )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- Sierpiński's gasket #2 -->
+  <vector>
+    <info>
+      <name>Sierpiński's gasket #2</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 144.  This should be fixed to not overwrite vectors.</description>
+    </info>
+    <parameters>
+      <generations>5</generations>
+      <length>500</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>1</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp" continuous="yes">
+      <![CDATA[
+      (let* (
+        (pi 3.141592653589793)
+        (len-div-2 (lambda (len) (/ len 2)))
+        (60-degrees (/ pi 3))
+        (120-degrees (* 2 60-degrees))
+        (180-degrees (* 3 60-degrees))
+        (120-degree-f 
+          (lambda (op) 
+            (lambda (angle flip) 
+              (op angle (* flip 120-degrees)))))
+        ;(angle-plus-120 (120-degree-f +))
+        ;(angle-minus-120 (120-degree-f -))
+        (angle-plus-120 
+          (lambda (angle flip)
+            (+ angle (* flip 120-degrees))))
+        (angle-minus-120 
+          (lambda (angle flip)
+            (- angle (* flip 120-degrees))))
+        (angle-plus-60
+          (lambda (angle flip)
+            (+ angle (* flip 60-degrees))))
+        (angle-minus-60
+          (lambda (angle flip)
+            (- angle (* flip 60-degrees))))            
+        (angle-minus-180
+          (lambda (angle flip)
+            (- angle (* flip 180-degrees))))            
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        (move
+          (lambda (len angle origin flip)
+            (let (
+              ;(len (len-div-6 len)) ;to do:  this doesn't work, but it should
+              (len (/ len 2))
+              (angle (- (* flip angle) 60-degrees))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        )
+        (list
+	        (list 
+            (list identity project1.2 project3.4 1 1) ; seed
+            (list identity angle-plus-120 project3.4 1 1)
+            (list identity angle-minus-120 project3.4 1 1)
+            )
+          (list ; rules (generator)
+            (list len-div-2 project1.2 project3.4 1 1) ; 1
+            (list len-div-2 angle-plus-120 project3.4 1 1) ; 2
+            
+            ;(list len-div-2 project1.2 project3.4 1 1) ; 3
+            ;(list len-div-2 angle-minus-120 project3.4 1 1) ; 4
+            
+            (list len-div-2 project1.2 move 1 1) ; 5
+            )))
+      ]]>
+    </rules>
+  </vector>  
+  <!-- gosper -->
+  <vector>
+    <info>
+      <name>gosper</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 70</description>
+    </info>
+    <parameters>
+      <generations>4</generations>
+      <length>400</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+          <color>
+            <name>silver</name>
+          </color>
+          <color>
+            <name>green</name>
+          </color>          
+        </palette>
+        <algorithm type="level">
+          <level>1</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[
+      (let* (
+        (pi 3.141592653589793)
+        (ratio (/ 1 (sqrt 7)))
+        (lenf (lambda (len) (* len ratio)))
+        (30-degrees (/ pi 6))
+        (60-degrees (/ pi 3))
+        (20-degrees (/ pi 9))
+        (80-degrees ( + 20-degrees 60-degrees))
+        (40-degrees (* 2 20-degrees))
+        (100-degrees (+ 60-degrees 40-degrees))
+        (120-degrees (* 2 60-degrees))
+        (180-degrees (* 3 60-degrees))
+        (160-degrees (- 180-degrees 20-degrees))
+        (120-degree-f 
+          (lambda (op) 
+            (lambda (angle flip) 
+              (op angle (* flip 120-degrees)))))
+        ;(angle-plus-120 (120-degree-f +))
+        ;(angle-minus-120 (120-degree-f -))
+        (angle-plus-120 
+          (lambda (angle flip)
+            (+ angle (* flip 120-degrees))))
+        (angle-plus-180 
+          (lambda (angle flip)
+            (+ angle (* flip 180-degrees))))
+        (angle-minus-30
+          (lambda (angle flip)
+            (- angle (* flip 30-degrees))))   
+        (angle-minus-20
+          (lambda (angle flip)
+            (- angle (* flip 20-degrees))))               
+        (angle-plus-120 
+          (lambda (angle flip)
+            (+ angle (* flip 120-degrees))))
+        (angle-plus-60
+          (lambda (angle flip)
+            (+ angle (* flip 60-degrees))))
+        (angle-plus-40
+          (lambda (angle flip)
+            (+ angle (* flip 40-degrees))))            
+        (angle-minus-60
+          (lambda (angle flip)
+            (- angle (* flip 60-degrees))))            
+        (angle-minus-180
+          (lambda (angle flip)
+            (- angle (* flip 180-degrees))))            
+        (angle-plus-160
+          (lambda (angle flip)
+            (+ angle (* flip 160-degrees))))     
+        (angle-plus-100
+          (lambda (angle flip)
+            (+ angle (* flip 100-degrees))))              
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+       (angle-minus-80
+          (lambda (angle flip)
+            (- angle (* flip 80-degrees))))          
+        )
+        (list
+	        (list 
+            (list identity project1.2 project3.4 1 1) ; seed
+            )
+          (list ; rules (generator)
+            (list lenf angle-minus-20 project3.4 1 1) ; 1
+            (list lenf angle-plus-40 project3.4 1 -1) ; 2
+            (list lenf angle-plus-160 project3.4 1 -1) ; 3            
+            (list lenf angle-plus-100 project3.4 1 1) ; 4
+            (list lenf angle-minus-20 project3.4 1 1) ; 5
+            (list lenf angle-minus-20 project3.4 1 1) ; 6     
+            (list lenf angle-minus-80 project3.4 1 -1) ; 7
+            )))
+      ]]>
+    </rules>
+  </vector>  
+  <!-- peano-gosper -->
+  <vector>
+    <info>
+      <name>peano-gosper</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 144</description>
+    </info>
+    <parameters>
+      <generations>2</generations>
+      <length>200</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>0</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[
+      (let* (
+        (pi 3.141592653589793)
+        (sqrt-3 (sqrt 3))
+        (ratio (/ 2 3))
+        (30-degrees (/ pi 6))
+        (90-degrees (/ pi 2))
+        (cos-30 (cos 30-degrees))
+        (150-degrees (- pi 30-degrees))
+        (lenf 
+          (lambda (len) 
+            (/ len (sqrt 3) )))
+        (60-degrees (/ pi 3))
+        (120-degrees (* 2 60-degrees))
+        (180-degrees (* 3 60-degrees))
+        (120-degree-f 
+          (lambda (op) 
+            (lambda (angle flip) 
+              (op angle (* flip 120-degrees)))))
+        ;(angle-plus-120 (120-degree-f +))
+        ;(angle-minus-120 (120-degree-f -))
+        (angle-plus-30 
+          (lambda (angle flip)
+            (+ angle (* flip 30-degrees))))
+        (angle-minus-30 
+          (lambda (angle flip)
+            (- angle (* flip 30-degrees)))) 
+        (angle-plus-90 
+          (lambda (angle flip)
+            (+ angle (* flip 90-degrees))))
+        (angle-minus-90 
+          (lambda (angle flip)
+            (- angle (* flip 90-degrees))))              
+        (angle-minus-150 
+          (lambda (angle flip)
+            (- angle (* flip 150-degrees))))             
+        (angle-plus-120 
+          (lambda (angle flip)
+            (+ angle (* flip 120-degrees))))
+        (angle-plus-150 
+          (lambda (angle flip)
+            (+ angle (* flip 150-degrees))))            
+        (angle-plus-180 
+          (lambda (angle flip)
+            (+ angle (* flip 180-degrees))))        
+        (angle-plus-120 
+          (lambda (angle flip)
+            (+ angle (* flip 120-degrees))))
+        (angle-plus-60
+          (lambda (angle flip)
+            (+ angle (* flip 60-degrees))))
+        (angle-minus-60
+          (lambda (angle flip)
+            (- angle (* flip 60-degrees))))            
+        (angle-minus-180
+          (lambda (angle flip)
+            (- angle (* flip 180-degrees))))            
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list 
+            (list identity project1.2 project3.4 1 1) ; seed
+            )
+          (list ; rules (generator)
+            (list lenf angle-plus-30 project3.4 1 1) ; 1
+            (list lenf angle-plus-150 project3.4 1 1) ; 2
+            (list lenf angle-plus-90 project3.4 1 1) ; 3            
+            (list lenf angle-minus-30 project3.4 1 1) ; 4
+            (list lenf angle-minus-30 project3.4 1 1) ; 5
+            (list lenf angle-minus-90 project3.4 1 1) ; 6     
+            )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- peano-gosper 2 -->
+  <vector>
+    <info>
+      <name>peano-gosper 2</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 144</description>
+    </info>
+    <parameters>
+      <generations>2</generations>
+      <length>200</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>0</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[
+      (let* (
+        (pi 3.141592653589793)
+        (ratio (/ 2 3))
+        (30-degrees (/ pi 6))
+        (90-degrees (/ pi 2))
+        (cos-30 (cos 30-degrees))
+        
+        (150-degrees (- pi 30-degrees))
+        (lenf 
+          (lambda (len) 
+            (/ len 2)))
+        (60-degrees (/ pi 3))
+        (120-degrees (* 2 60-degrees))
+        (180-degrees (* 3 60-degrees))
+        (120-degree-f 
+          (lambda (op) 
+            (lambda (angle flip) 
+              (op angle (* flip 120-degrees)))))
+        ;(angle-plus-120 (120-degree-f +))
+        ;(angle-minus-120 (120-degree-f -))
+        (angle-plus-30 
+          (lambda (angle flip)
+            (+ angle (* flip 30-degrees))))
+        (angle-minus-30 
+          (lambda (angle flip)
+            (- angle (* flip 30-degrees)))) 
+        (angle-plus-90 
+          (lambda (angle flip)
+            (+ angle (* flip 90-degrees))))
+        (angle-minus-90 
+          (lambda (angle flip)
+            (- angle (* flip 90-degrees))))              
+        (angle-minus-150 
+          (lambda (angle flip)
+            (- angle (* flip 150-degrees))))             
+        (angle-plus-120 
+          (lambda (angle flip)
+            (+ angle (* flip 120-degrees))))
+        (angle-plus-150 
+          (lambda (angle flip)
+            (+ angle (* flip 150-degrees))))            
+        (angle-plus-180 
+          (lambda (angle flip)
+            (+ angle (* flip 180-degrees))))        
+        (angle-plus-120 
+          (lambda (angle flip)
+            (+ angle (* flip 120-degrees))))
+        (angle-plus-60
+          (lambda (angle flip)
+            (+ angle (* flip 60-degrees))))
+        (angle-minus-60
+          (lambda (angle flip)
+            (- angle (* flip 60-degrees))))            
+        (angle-minus-180
+          (lambda (angle flip)
+            (- angle (* flip 180-degrees))))
+        (angle-minus-120
+          (lambda (angle flip)
+            (- angle (* flip 120-degrees))))             
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        (move-origin-120
+          (lambda (len angle origin flip)
+            (let (
+              ;(len (len-div-6 len)) ;to do:  this doesn't work, but it should
+              (len (/ len 2))
+              (angle (+ (* flip angle) 120-degrees))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (move-origin-60
+          (lambda (len angle origin flip)
+            (let (
+              ;(len (len-div-6 len)) ;to do:  this doesn't work, but it should
+              (len (/ len 2))
+              (angle (+ (* flip angle) 60-degrees))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+         (move-origin-120
+          (lambda (len angle origin flip)
+            (let (
+              ;(len (len-div-6 len)) ;to do:  this doesn't work, but it should
+              (len (/ len 2))
+              (angle (- (* flip angle) 120-degrees))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (move-origin-twice-by-120
+          (lambda (len angle origin flip)
+            (let (
+              ;(len (/ len 2))
+              (x 3)
+              ;(angle (+ (* flip angle) 120-degrees))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))  
+        (move-origin-twice-by-minus-120
+          (lambda (len angle origin flip)
+            (let (
+              (angle (- (* flip angle) 120-degrees))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))                 
+        (backup-origin
+          (lambda (len angle origin flip)
+            (let (
+              ;(len (len-div-6 len)) ;to do:  this doesn't work, but it should
+              (len (/ len 2))
+              (angle (- (* flip angle) 180-degrees))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))                
+        )
+        (list
+	        (list 
+            (list identity project1.2 project3.4 1 1) ; seed
+            )
+          (list ; rules (generator)
+            (list lenf angle-minus-60 move-origin-120 1 1) ; 1 
+            (list lenf angle-plus-120 move-origin-twice-by-120 1 1) ; 2
+            (list lenf angle-plus-180 project3.4 1 1) ; 3    
+            (list lenf angle-plus-60 project3.4 -1 1) ; 4  
+            (list lenf project1.2 move-origin-twice-by-minus-120 -1 1) ; 5
+            (list lenf project1.2 project3.4 1 1) ; 6              
+            )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- koch quadric -->
+  <vector>
+    <info>
+      <name>koch quadric</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 144</description>
+    </info>
+    <parameters>
+      <generations>3</generations>
+      <length>250</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>0</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[            
+     (let* (
+        (pi 3.141592653589793)
+        (pi-over-2 (/ pi 2))
+        (pi-over-4 (/ pi 4))
+        (sqrt-2 (sqrt 2))
+        (lenf (lambda (len) (/ len 4)))
+        (90-degrees pi-over-2)
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (angle-minus-180
+          (lambda (angle flip) (- angle (* flip pi))))
+        (move-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (* 2 (/ len 3) sqrt-2))
+              (angle (+ (* flip angle) pi-over-2 pi-over-4))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (revert-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (* 2 (/ len 3) sqrt-2))
+              (angle (- (* flip angle) pi-over-2 pi-over-4))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (origin-scale-by-3
+          (lambda (len angle origin flip)
+            (let (
+              (angle (* flip angle))
+              (new-len (* 3 (/ len 3)))
+              )
+              (cons
+                (+ (car origin) (* new-len (cos angle)))
+                (+ (cdr origin) (* new-len (sin angle)))))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list ; seed
+            (list identity project1.2 project3.4 1 1) ; 1
+            (list identity angle-minus-90 project3.4 1 1) ; 2
+            (list identity angle-minus-180 project3.4 1 1) ; 3
+            (list identity angle-plus-90 project3.4 1 1)) ; 4
+          (list ; rules (generator)
+            (list lenf project1.2 project3.4 1 1) ; 1 
+            (list lenf angle-plus-90 project3.4 1 1)
+            (list lenf project1.2 project3.4 1 1)
+            (list lenf angle-minus-90 project3.4 1 1)
+            (list lenf angle-minus-90 project3.4 1 1)
+            (list lenf project1.2 project3.4 1 1)
+            (list lenf angle-plus-90 project3.4 1 1)
+            (list lenf project1.2 project3.4 1 1)
+            )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- square spikes inverted -->
+  <vector>
+    <info>
+      <name>square spikes inverted</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page ?</description>
+      <comments>fix lenf, implement tan in scheme</comments>
+    </info>
+    <parameters>
+      <generations>4</generations>
+      <length>175</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>0</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[            
+     (let* (
+        (pi 3.141592653589793)
+        (pi-over-2 (/ pi 2))
+        (pi-over-4 (/ pi 4))
+        (5-degrees (/ pi 36))
+        (85-degrees (* 17 5-degrees))
+        (sqrt-2 (sqrt 2))
+        (lenf (lambda (len) (/ len 2 (cos 5-degrees))))
+        (90-degrees pi-over-2)
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-plus-85 
+          (lambda (angle flip) (+ angle (* flip 85-degrees))))
+        (angle-minus-85 
+          (lambda (angle flip) (- angle (* flip 85-degrees))))              
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (angle-minus-180
+          (lambda (angle flip) (- angle (* flip pi))))
+        (move-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (* 2 (/ len 3) sqrt-2))
+              (angle (+ (* flip angle) pi-over-2 pi-over-4))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (revert-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (* 2 (/ len 3) sqrt-2))
+              (angle (- (* flip angle) pi-over-2 pi-over-4))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (origin-scale-by-3
+          (lambda (len angle origin flip)
+            (let (
+              (angle (* flip angle))
+              (new-len (* 3 (/ len 3)))
+              )
+              (cons
+                (+ (car origin) (* new-len (cos angle)))
+                (+ (cdr origin) (* new-len (sin angle)))))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list ; seed
+            (list identity project1.2 project3.4 1 1) ; 1
+            (list identity angle-minus-90 project3.4 1 1) ; 2
+            (list identity angle-minus-180 project3.4 1 1) ; 3
+            (list identity angle-plus-90 project3.4 1 1)) ; 4
+          (list ; rules (generator)
+            (list lenf project1.2 project3.4 1 1) ; 1 
+            (list lenf angle-plus-85 project3.4 1 1)
+            (list lenf angle-minus-85 project3.4 1 1)
+            (list lenf project1.2 project3.4 1 1) ; 1 
+            )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- square spikes -->
+  <vector>
+    <info>
+      <name>square spikes</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page ?</description>
+      <comments>implement tan in scheme</comments>
+    </info>
+    <parameters>
+      <generations>4</generations>
+      <length>400</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>0</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[            
+     (let* (
+        (pi 3.141592653589793)
+        (pi-over-2 (/ pi 2))
+        (pi-over-4 (/ pi 4))
+        (5-degrees (/ pi 36))
+        (85-degrees (* 17 5-degrees))
+        (42-point-5-degrees (* (/ 42.5 180) pi))
+        (sqrt-2 (sqrt 2))
+        (lenf (lambda (len) (/ len 2 (cos 5-degrees))))
+        (lenf 
+          (lambda (len) 
+            (/ 
+              (* len (sin 42-point-5-degrees))
+              (* 2 (cos 42-point-5-degrees))
+              (cos 5-degrees))))
+        (90-degrees pi-over-2)
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-plus-85 
+          (lambda (angle flip) (+ angle (* flip 85-degrees))))
+        (angle-minus-85 
+          (lambda (angle flip) (- angle (* flip 85-degrees))))              
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (angle-minus-180
+          (lambda (angle flip) (- angle (* flip pi))))
+        (move-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (* 2 (/ len 3) sqrt-2))
+              (angle (+ (* flip angle) pi-over-2 pi-over-4))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (revert-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (* 2 (/ len 3) sqrt-2))
+              (angle (- (* flip angle) pi-over-2 pi-over-4))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (origin-scale-by-3
+          (lambda (len angle origin flip)
+            (let (
+              (angle (* flip angle))
+              (new-len (* 3 (/ len 3)))
+              )
+              (cons
+                (+ (car origin) (* new-len (cos angle)))
+                (+ (cdr origin) (* new-len (sin angle)))))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list ; seed
+            (list identity project1.2 project3.4 1 1) ; 1
+            (list identity angle-plus-90 project3.4 1 1) ; 4
+            (list identity angle-minus-180 project3.4 1 1) ; 3
+            (list identity angle-minus-90 project3.4 1 1) ; 2
+            )
+          (list ; rules (generator)
+            (list lenf project1.2 project3.4 1 1) ; 1 
+            (list lenf angle-plus-85 project3.4 1 1)
+            (list lenf angle-minus-85 project3.4 1 1)            
+            (list lenf project1.2 project3.4 1 1) ; 1 
+            )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- tiles -->
+  <vector>
+    <info>
+      <name>tiles</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page ?</description>
+      <comments>implement tan in scheme</comments>
+    </info>
+    <parameters>
+      <generations>2</generations>
+      <length>400</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>0</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp" continuous="no">
+      <![CDATA[            
+     (let* (
+        (pi 3.141592653589793)
+        (pi-over-2 (/ pi 2))
+        (pi-over-4 (/ pi 4))
+        (5-degrees (/ pi 36))
+        (85-degrees (* 17 5-degrees))
+        (42-point-5-degrees (* (/ 42.5 180) pi))
+        (sqrt-2 (sqrt 2))
+        (lenf (lambda (len) (/ len 3)))
+        (90-degrees pi-over-2)
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-plus-85 
+          (lambda (angle flip) (+ angle (* flip 85-degrees))))
+        (angle-minus-85 
+          (lambda (angle flip) (- angle (* flip 85-degrees))))              
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (angle-plus-180
+          (lambda (angle flip) (+ angle (* flip pi))))
+        (two-thirds (/ 2 3))
+        (move
+          (lambda (len angle origin flip)
+            (let (
+              (angle (- (* flip angle) 90-degrees))
+              (len (/ len 3))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (revert-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (* 2 (/ len 3) sqrt-2))
+              (angle (- (* flip angle) pi-over-2 pi-over-4))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (origin-scale-by-3
+          (lambda (len angle origin flip)
+            (let (
+              (angle (* flip angle))
+              (new-len (* 3 (/ len 3)))
+              )
+              (cons
+                (+ (car origin) (* new-len (cos angle)))
+                (+ (cdr origin) (* new-len (sin angle)))))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list ; seed
+            (list identity project1.2 project3.4 1 1) ; 1
+            (list identity angle-minus-90 project3.4 1 1) ; 4
+            (list identity angle-plus-180 project3.4 1 1) ; 3
+            (list identity angle-plus-90 project3.4 1 1) ; 2
+            )
+          (list ; rules (generator)
+            (list lenf project1.2 move 1 1) ; 1 
+            (list lenf project1.2 project3.4 1 1) ; 1 
+            (list lenf angle-minus-90 project3.4 1 1) ; 1
+            (list lenf project1.2 project3.4 1 1) ; 1 
+            (list lenf angle-minus-90 project3.4 1 1) ; 1
+            
+            (list lenf angle-plus-180 project3.4 1 1)
+            
+             (list lenf angle-plus-180 project3.4 1 1)
+                                  
+            )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- tiles 2 -->
+  <vector>
+    <info>
+      <name>tiles 2</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page ?</description>
+      <comments>implement tan in scheme</comments>
+    </info>
+    <parameters>
+      <generations>1</generations>
+      <length>200</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>0</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp" continuous="no">
+      <![CDATA[            
+      (let* (
+        (pi 3.141592653589793)
+        (pi-over-2 (/ pi 2))
+        (pi-over-4 (/ pi 4))
+        (5-degrees (/ pi 36))
+        (85-degrees (* 17 5-degrees))
+        (42-point-5-degrees (* (/ 42.5 180) pi))
+        (sqrt-2 (sqrt 2))
+        (lenf (lambda (len) (/ len 3)))
+        (90-degrees pi-over-2)
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-plus-85 
+          (lambda (angle flip) (+ angle (* flip 85-degrees))))
+        (angle-minus-85 
+          (lambda (angle flip) (- angle (* flip 85-degrees))))              
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (angle-plus-180
+          (lambda (angle flip) (+ angle (* flip pi))))
+        (two-thirds (/ 2 3))
+        (move
+          (lambda (len angle origin flip)
+            (let (
+              (len (/ len 3))
+
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (revert-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (* 2 (/ len 3) sqrt-2))
+              (angle (- (* flip angle) pi-over-2 pi-over-4))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))
+        (origin-scale-by-3
+          (lambda (len angle origin flip)
+            (let (
+              (angle (* flip angle))
+              (new-len (* 3 (/ len 3)))
+              )
+              (cons
+                (+ (car origin) (* new-len (cos angle)))
+                (+ (cdr origin) (* new-len (sin angle)))))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list ; seed
+            (list identity project1.2 project3.4 1 1) ; 1
+            (list identity angle-plus-90 project3.4 1 1) ; 4
+            (list identity angle-plus-180 project3.4 1 1) ; 3
+            (list identity angle-minus-90 project3.4 1 1) ; 2
+            )
+          (list ; rules (generator)
+            (list lenf project1.2 move 1 1) ; 1 
+            (list lenf project1.2 project3.4 1 1) ; 1 
+            (list lenf angle-plus-90 project3.4 1 1) 
+            (list lenf angle-plus-180 project3.4 1 1) ; 1 
+            (list lenf angle-plus-90 project3.4 1 1)    
+            (list lenf angle-plus-180 project3.4 1 1)
+            (list lenf angle-plus-180 project3.4 1 1)            
+            )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- peano curve -->
+  <vector>
+    <info>
+      <name>peano curve</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 62</description>
+    </info>
+    <parameters>
+      <generations>3</generations>
+      <length>430</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+          <color>
+            <name>brown</name>
+          </color>
+          <color>
+            <name>yellow</name>
+          </color>
+          <color>
+            <name>navy</name>
+          </color>
+          <color>
+            <name>silver</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>1</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[            
+     (let* (
+        (pi 3.141592653589793)
+        (pi-over-2 (/ pi 2))
+        (pi-over-4 (/ pi 4))
+        (lenf (lambda (len) (/ len 3)))
+        (90-degrees pi-over-2)
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (angle-plus-180
+          (lambda (angle flip) (+ angle (* flip pi))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list ; seed
+            (list identity project1.2 project3.4 1 1) ; 1
+            )
+          (list ; rules (generator)
+            (list lenf project1.2 project3.4 1 1) ; 1 
+            (list lenf angle-plus-90 project3.4 1 1)
+            (list lenf project1.2 project3.4 1 1)
+            (list lenf angle-minus-90 project3.4 1 1)
+            (list lenf angle-minus-90 project3.4 1 1)
+            (list lenf angle-plus-180 project3.4 1 1)
+            (list lenf angle-plus-90 project3.4 1 1)
+            (list lenf project1.2 project3.4 1 1)
+            (list lenf project1.2 project3.4 1 1)
+            )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- sierpiński carpet #2 -->
+  <vector>
+    <info>
+      <name>sierpiński carpet #2</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 62</description>
+    </info>
+    <parameters>
+      <generations>3</generations>
+      <length>450</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+          <color>
+            <name>brown</name>
+          </color>
+          <color>
+            <name>yellow</name>
+          </color>
+          <color>
+            <name>navy</name>
+          </color>
+          <color>
+            <name>silver</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>1</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[            
+     (let* (
+        (pi 3.141592653589793)
+        (pi-over-2 (/ pi 2))
+        (pi-over-4 (/ pi 4))
+        (lenf (lambda (len) (/ len 3)))
+        (90-degrees pi-over-2)
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (angle-plus-180
+          (lambda (angle flip) (+ angle (* flip pi))))
+        (move-origin
+          (lambda (len angle origin flip)
+            (let (
+              (len (/ len 3))
+              ;(angle (+ (* flip angle) pi-over-2 pi-over-4))
+              )
+              (cons
+                (+ (car origin) (* len (cos angle)))
+                (+ (cdr origin) (* len (sin angle)))))))          
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list ; seed
+            (list identity project1.2 project3.4 1 1) ; 1
+            )
+          (list ; rules (generator)
+            (list lenf project1.2 project3.4 1 1) ; 1 
+            (list lenf angle-plus-90 project3.4 1 1)
+            (list lenf project1.2 project3.4 1 1)
+            (list lenf angle-minus-90 project3.4 1 1)
+            (list lenf angle-minus-90 project3.4 1 1)
+            (list lenf angle-plus-180 project3.4 1 1)
+            (list lenf angle-plus-90 project3.4 1 1)
+            ;(list lenf project1.2 project3.4 1 1)
+            (list lenf project1.2 move-origin 1 1)
+            )))
+      ]]>
+    </rules>
+  </vector>
+  <!-- hilbert -->
+  <vector>
+    <info>
+      <name>hilbert</name>
+      <description>From "The Fractal Geometry of Nature" (Mandelbrot), page 62 (not working)</description>
+    </info>
+    <parameters>
+      <generations>2</generations>
+      <length>100</length>
+      <coloring>
+        <palette>
+          <color>
+            <name>gray</name>
+          </color>
+          <color>
+            <name>maroon</name>
+          </color>
+          <color>
+            <name>gold</name>
+          </color>
+          <color>
+            <name>blue</name>
+          </color>
+          <color>
+            <name>orange</name>
+          </color>
+          <color>
+            <name>brown</name>
+          </color>
+          <color>
+            <name>yellow</name>
+          </color>
+          <color>
+            <name>navy</name>
+          </color>
+          <color>
+            <name>silver</name>
+          </color>
+        </palette>
+        <algorithm type="level">
+          <level>1</level>
+        </algorithm>
+      </coloring>
+    </parameters>
+    <rules type="lisp">
+      <![CDATA[            
+     (let* (
+        (pi 3.141592653589793)
+        (pi-over-2 (/ pi 2))
+        (pi-over-4 (/ pi 4))
+        (sqrt-2 (sqrt 2))
+        (lenf (lambda (len) (/ len 2)))
+        (90-degrees pi-over-2)
+        (angle-plus-90 
+          (lambda (angle flip) (+ angle (* flip 90-degrees))))
+        (angle-minus-90 
+          (lambda (angle flip) (- angle (* flip 90-degrees))))
+        (angle-minus-180
+          (lambda (angle flip) (- angle (* flip pi))))
+        (identity (lambda (x) x))
+        (project1.2 (lambda (x y) x))
+        (project3.4 (lambda (w x y z) y))
+        )
+        (list
+	        (list ; seed
+            ;(list identity project1.2 project3.4 1 1) ; 1
+            (list identity angle-minus-90 project3.4 1 -1) ; 2
+            (list identity angle-minus-180 project3.4 1 1) ; 3
+            (list identity angle-plus-90 project3.4 1 1)
+            )
+          (list ; rules (generator)
+            (list lenf angle-plus-90 project3.4 1 1) ; 1 
+            (list lenf project1.2 project3.4 1 1) ; 1 
+            (list lenf angle-minus-90 project3.4 1 1) ; 1 
+            (list lenf project1.2 project3.4 1 1)
+            )))
+      ]]>
+    </rules>
+  </vector>
+</plots>

@@ -1,0 +1,1054 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- to do:
+	1) comments
+	2) CLD color (arg = which), level (arg = level to set), depth (color taken from level)
+-->
+<plots>
+	<lsystem>
+    	<name>32 segment</name>
+		  <comment>can't remember where this came from:  off the web somewhere</comment>
+		<angle>90</angle>
+		<axiom>0 C f + 1 C f + 2 C f + 3 C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>- f + f - f - f + f + f f - f + f + f f + f - f - f f + f f - f f + f + f - f f - f - f + f f - f - f + f + f - f +</rhs></rule></rules>
+    		<parameters>
+      			<generations>3</generations>
+      			<vector>
+        			<length>3</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>bent big h</name>
+		<angle>80</angle>
+		<axiom>0 C [ f ] 2 - 2 C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>| [ + f ] [ - f ]</rhs></rule></rules>
+    		<parameters>
+      			<generations>9</generations>
+      			<vector>
+        			<length>260</length>
+				<scale>0.65</scale>
+				<angle>190</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>big h</name>
+		<angle>90</angle>
+		<axiom>D [ f ] 2 - f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>| [ + f ] [ - f ]</rhs></rule></rules>
+    		<parameters>
+      			<generations>9</generations>
+      			<vector>
+        			<length>280</length>
+				<scale>0.65</scale></vector></parameters></lsystem>
+	<lsystem>
+		<name>box</name>
+		<angle>90</angle>
+		<axiom>0 C f - 1 C f - 2 C f - 3 C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f - f + f + f - f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>5</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>bush 1</name>
+		<angle>25</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+					<rhs>1 L f 1 L f + [ + 1 L f - 1 L f - 1 L f ] - [ - 1 L f + 1 L f + 1 L f ]</rhs></rule></rules>
+<!--
+				<rhs>0 C f 1 C f + [ + 2 C f - 3 C f - 4 C f ] - [ - 5 C f + 6 C f + 7 C f ]</rhs></rule></rules>
+-->
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>8</length>
+				<angle>90</angle></vector></parameters> </lsystem>
+	<lsystem>
+		<name>bush 2</name>
+		<angle>20</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1 L | [+ 1 L f ] 1 L | [ - 1 L f ] + 1 L f</rhs></rule></rules>
+    		<parameters>
+      			<generations>8</generations>
+      			<vector>
+        			<length>30</length>
+				<angle>90</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>carpet</name>
+		<angle>90</angle>
+		<axiom>0 C f - 1 C f - 2 C f - 3 C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f [ f ] - f + f [ 2 - f ] + f - f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>5</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>church (Dekking)</name>
+		<comment>from Fracint website</comment>
+		<angle unitOfMeasure="directions">4</angle>
+		<axiom>0 C w 1 C z 2 C y 3 C x</axiom>
+		<rules>
+			<rule>
+				<lhs>w</lhs>
+				<rhs>f w + f - x f w - f + z</rhs></rule>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>2 + f 2 - y - f + z 2 + f 2- y - f + z</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>2 + f 2 - y + f - x</rhs></rule>
+			<rule>
+				<lhs>z</lhs>
+				<rhs>f w + f - x</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs></rhs></rule></rules>
+    		<parameters>
+      			<generations>8</generations>
+      			<vector>
+        			<length>5</length>	
+				<angle>180</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>circular tile</name>
+		<comment>from Fracint website</comment>
+		<angle unitOfMeasure="directions">24</angle>
+		<axiom>0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x + 0L x</axiom>
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>[ f + f + f + f [ 3- x - y ] 5+ f 8+ f - f - f - f ]</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>[ f + f + f + f [ 3- y ] 5+ f 8+ f - f - f - f ]</rhs></rule></rules>
+    		<parameters>
+      			<generations>4</generations>
+      			<vector>
+        			<length>20</length>	
+				<angle>0</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>cross</name>
+		<comment>from Fracint website</comment>
+		<angle unitOfMeasure="directions">4</angle>
+		<axiom>! f x</axiom>
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>1L f 1L x + f 1L x + f 1L x f 1L y - f 1L y -</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>+ f x + f x f y - f y - f y</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs></rhs></rule></rules>
+    		<parameters>
+      			<generations>6</generations>
+      			<vector>
+        			<length>4</length>	
+				<angle>0</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>dragon</name>
+		<angle>90</angle>
+		<axiom>0L f x</axiom>
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>1L x + 1L y f +</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>- f x - y</rhs></rule></rules>
+    		<parameters>
+      			<generations>12</generations>
+      			<vector>
+        			<length>8</length></vector>	
+				<startAngle>90</startAngle></parameters></lsystem>
+	<lsystem>
+		<name>dragon curve</name>
+		<angle>45</angle>
+		<axiom>0C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>[ + 1L f ] [ + g 2 - g 4 - 1L f ]</rhs></rule>
+			<rule>
+				<lhs>g</lhs>
+				<rhs>- g 2 + g -</rhs></rule></rules>
+    		<parameters>
+      			<generations>12</generations>
+      			<vector>
+        			<length>10</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>dragon curve 2</name>
+		<angle>45</angle>
+		<axiom>0L f x</axiom>
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>1L - f x 2 + f 1L y -</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>+ f x 2 - f y +</rhs></rule></rules>
+    		<parameters>
+      			<generations>10</generations>
+      			<vector>
+        			<length>7</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>dragon (Lévy)</name>
+		<angle>45</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>+ 1L f 2 - 1L f +</rhs></rule></rules>
+    		<parameters>
+      			<generations>12</generations>
+      			<vector>
+        			<length>8</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>dragon (Joel Castellanos)</name>
+		<angle>90</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L f - 1L h</rhs></rule>
+			<rule>
+				<lhs>h</lhs>
+				<rhs>f + h</rhs></rule></rules>
+    		<parameters>
+      			<generations>12</generations>
+      			<vector>
+        			<length>9</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>flow snake (Adrian Mariano)</name>
+		<angle unitOfMeasure="directions">6</angle>
+		<axiom>0L f l</axiom>
+		<rules>
+			<rule>
+				<lhs>l</lhs>
+				<rhs>1L f l - f 1L r 2 - f 1L r + f 1L l 2 + f 1L l f 1L l + f 1L r -</rhs></rule>
+			<rule>
+				<lhs>r</lhs>
+				<rhs>+ f l - f r f r 2 - f r - f l 2 + f l + f r</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs></rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>8</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>hilbert</name>
+		<angle>90</angle>
+		<axiom>l</axiom>
+		<rules>
+			<rule>
+				<lhs>l</lhs>
+				<rhs>+ 1L r f - 1L l f 1L l - f 1L r +</rhs></rule>
+			<rule>
+				<lhs>r</lhs>
+				<rhs>- l f + r f r + f l -</rhs></rule></rules>
+    		<parameters>
+      			<generations>6</generations>
+      			<vector>
+        			<length>15</length></vector></parameters></lsystem>
+	<lsystem>
+    		<name>hilbert 2</name>
+		<angle>90</angle>
+		<axiom>x</axiom>
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>1L x f 1L y f 1L x + f + 1L y f 1L x f 1L y - f - 1L x f 1L y f 1L x</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>y f x f y - f - x f y f x + f + y f x f y</rhs></rule></rules>
+    		<parameters>
+      			<generations>4</generations>
+      			<vector>
+        			<length>17</length></vector></parameters></lsystem>
+	<lsystem>
+    		<name>hilbert (Ken Philip)</name>
+		<angle>90</angle>
+		<axiom>x</axiom>
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>- 1L y f + 1L x f 1L x + f 1L y -</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>+ x f - y f y - f x +</rhs></rule></rules>
+    		<parameters>
+      			<generations>6</generations>
+      			<vector>
+        			<length>15</length></vector></parameters></lsystem>
+	<lsystem>
+    		<name>hiway</name>
+		<comment>from Facint website</comment>
+		<angle unitOfMeasure="directions">4</angle>
+		<axiom>! 0L f x</axiom>
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>1L f x + f 1L y</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>f x - f y</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs></rhs></rule></rules>
+    		<parameters>
+      			<generations>12</generations>
+      			<vector>
+        			<length>9</length></vector></parameters></lsystem>
+	<lsystem>
+    		<name>hiwaymed</name>
+		<comment>from Facint website</comment>
+		<angle unitOfMeasure="directions">8</angle>
+		<axiom>! - x</axiom>
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>1L x + f + 1L y</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>x - f - y</rhs></rule></rules>
+    		<parameters>
+      			<generations>13</generations>
+      			<vector>
+        			<length>4</length></vector></parameters></lsystem>
+ 	<lsystem>
+    		<name>inkscape</name>
+    		<angle>16</angle>
+    		<axiom>2 + 0L f</axiom>
+    		<rules>
+      			<rule>
+        			<lhs>f</lhs>
+        			<rhs>1L f 1L f -[- 1L f + 1L f + 1L f] + [+ 1L f - 1L f - 1L f]</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>7</length>
+				<angle>120</angle></vector></parameters></lsystem>
+  	<lsystem>
+    		<name>inkscape 2</name>
+    		<angle>60</angle>
+    		<axiom>f</axiom>
+    		<rules>
+      			<rule>
+        			<lhs>f</lhs>
+        			<rhs>- 1L f + 1L f + g [+ 1L f + 1L f] -</rhs></rule>
+      			<rule>
+        			<lhs>g</lhs>
+        			<rhs>g g</rhs></rule></rules>
+    		<parameters>
+      			<generations>6</generations>
+      			<vector>
+        			<length>8</length></vector></parameters></lsystem>
+  	<lsystem>
+    		<name>islands and lakes</name>
+    		<angle>90</angle>
+    		<axiom>! 0C f + 1C f + 2C f + 3C f</axiom>
+    		<rules>
+      			<rule>
+        			<lhs>f</lhs>
+        			<rhs>f + g - f f + f + f f + f g + f f - g + f f - f - f f - f g - f f f</rhs></rule>
+      			<rule>
+        			<lhs>g</lhs>
+        			<rhs>g g g g g g</rhs></rule></rules>
+    		<parameters>
+      			<generations>3</generations>
+      			<vector>
+        			<length>7</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>koch</name>
+		<angle>60</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L f + 1L f 2- 1L f + 1L f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>9</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>koch a</name>
+		<angle>90</angle>
+		<axiom>! 0C f - 1C f - 2C f - 3C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f f - f - f - f - f - f + f</rhs></rule></rules>
+    		<parameters>
+      			<generations>4</generations>
+      			<vector>
+        			<length>10</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>koch d</name>
+		<angle>90</angle>
+		<axiom>! 0C f - 1C f - 2C f - 3C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f f - f 2- f - f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>5</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>koch e</name>
+		<angle>90</angle>
+		<axiom>! 0C f - 1C f - 2C f - 3C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f - f f 2- f - f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>12</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>koch f</name>
+		<angle>90</angle>
+		<axiom>! 0C f - 1C f - 2C f - 3C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f - f + f - f - f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>12</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>koch quadratic island</name>
+		<angle>90</angle>
+		<axiom>! 0C f - 1C f - 2C f - 3C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f + f f - f f - f - f + f + f f - f - f + f + f f + f f - f</rhs></rule></rules>
+    		<parameters>
+      			<generations>3</generations>
+      			<vector>
+        			<length>7</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>koch quadratic snowflake</name>
+		<angle>90</angle>
+		<axiom>! - f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L f + 1L f - 1L f - 1L f + 1L f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>8</length>
+				<angle>90</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>koch quadric</name>
+		<angle>90</angle>
+		<axiom>0C f - 1C f - 2C f - 3C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f - f + f + f f - f - f + f</rhs></rule></rules>
+    		<parameters>
+      			<generations>4</generations>
+      			<vector>
+        			<length>4</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>koch snowflake</name>
+		<angle>60</angle>
+		<axiom>0C f 2+ 1C f 2 + 2C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f - f 2 + f - f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>5</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>koch square</name>
+		<angle>90</angle>
+		<axiom>0C f - 1C f - 2C f - 3C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f f - f - f - f - f f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>5</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>lace</name>
+		<angle>30</angle>
+		<axiom>w</axiom>
+		<rules>
+			<rule>
+				<lhs>w</lhs>
+				<rhs>3+ 1L x 2 - f 2 - 1L z f 1L x +</rhs></rule>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>3 - w 2 + f 2 + y f w -</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>+ z f x 2 - f 2 - z 3 +</rhs></rule>
+			<rule>
+				<lhs>z</lhs>
+				<rhs>- y f w 2 + f 2 + y 3 -</rhs></rule></rules>
+    		<parameters>
+      			<generations>8</generations>
+      			<vector>
+        			<length>6</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>peano</name>
+		<angle>90</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L f + 1L f - 1L f - 1L f - 1L f + 1L f + 1L f + 1L f - 1L f</rhs></rule></rules>
+    		<parameters>
+      			<generations>4</generations>
+      			<vector>
+        			<length>17</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>peano-gosper</name>
+		<angle>60</angle>
+		<axiom>x</axiom>
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>1L x + 1L y f 2 + 1L y f - f 1L x 2 - f 1L x f 1L x - 1L y f +</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>- f x + y f y f 2 + y f + f x 2 - f x - y</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>8</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>penrose</name>
+		<angle unitOfMeasure="directions">10</angle>
+		<axiom>+ 0C w f 2- 1C x f 3- 2C y f 2- 3C z f</axiom>
+		<rules>
+			<rule>
+				<lhs>w</lhs>
+				<rhs>y f 2 + z f 4 - x f[ - y f 4 - w f ] 2 +</rhs></rule>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>+ y f 2 - z f [ 3 - w f 2 - x f ] +</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>- w f 2 + x f [ 3 + y f 2 + z f ] -</rhs></rule>
+			<rule>
+				<lhs>z</lhs>
+				<rhs>2 - y f 4 + w f [ + z f 4 + x f ] 2 - x f</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs></rhs></rule></rules>
+    			<parameters>
+      				<generations>5</generations>
+      				<vector>
+        				<length>25</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>penrose 2</name>
+		<angle unitOfMeasure="directions">10</angle>
+		<axiom>! 2+ 0L z f 4- 0L x f - 0L y f 4- w f</axiom>
+		<rules>
+			<rule>
+				<lhs>w</lhs>
+				<rhs>y f 2+ z f 4- x f [- y f 4- w f] 2+</rhs></rule>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>+ y f 2 - z f [ 3 - w f 2 - x f ] +</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>- w f 2+ x f [ 3+ y f 2+ z f ] -</rhs></rule>
+			<rule>
+				<lhs>z</lhs>
+				<rhs>2- y f 4+ w f [ + z f 4+ x f ] 2- x f</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs></rhs></rule></rules>
+    			<parameters>
+      				<generations>5</generations>
+      				<vector>
+        				<length>25</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>penrose 4</name>
+		<angle unitOfMeasure="directions">10</angle>
+		<axiom>+ 0C [y] 2+ 1C [y] 2+ 2C [y] 2+ 3C [y] 2+ 4C [y]</axiom>
+		<rules>
+			<rule>
+				<lhs>w</lhs>
+				<rhs>y f 2 + z f 4 - x f[ - y f 4- w f ] 2+</rhs></rule>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>+ y f 2 - z f [ 3 - w f 2 - x f ] +</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>- w f 2 + x f [ 3 + y f 2 + z f ] -</rhs></rule>
+			<rule>
+				<lhs>z</lhs>
+				<rhs>2 - y f 4 + w f [ + z f 4 + x f ] 2 - x f</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs></rhs></rule></rules>
+    			<parameters>
+      				<generations>5</generations>
+      				<vector>
+        				<length>25</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>penrose snowflake</name>
+		<angle>18</angle>
+		<axiom>0C f 4 - 1C f 4 - 2C f 4 - 3C f 4 - 4C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f 4 - f 4 - f 10 - f + + f 4 - f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>6</length></vector></parameters></lsystem>
+	<lsystem>
+    		<name>penrose tile</name>
+		<angle>36</angle>
+		<axiom>[ 0C x ] 2 + [ 1C x ] 2 + [ 2C x ] 2 + [ 3C x ] 2 + [ 4C x ]</axiom>
+		<rules>
+			<rule>
+				<lhs>w</lhs>
+				<rhs>y f 2 + z f 4 - x f [ - y f 4 - w f ] 2+</rhs></rule>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>+ y f 2 - z f [ 3 - w f 2 - x f ] +</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>- w f 2 + x f [ 3 + y f 2 + z f ] -</rhs></rule>
+			<rule>
+				<lhs>z</lhs>
+				<rhs>2 - y f 4 + w f [ + z f 4 + x f ] 2 - x f</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs></rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>30</length></vector></parameters></lsystem>
+	<lsystem>
+    		<name>pentaplexity</name>
+		<angle unitOfMeasure="directions">10</angle>
+		<axiom>! 0L f 2+ 0L f 2+ 0L f 2+ 0L f 2+ 0L f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f 2+ f 2+ f ^ f - f 2+ f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>6</length>
+				<angle>0</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>pentigree</name>
+		<angle unitOfMeasure="directions">5</angle>
+		<axiom>0C f - 1C f - 2C f - 3C f - 4C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f - f 2 + f + f - f - f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>5</length>
+				<angle>18</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>pentive 3</name>
+		<angle unitOfMeasure="directions">10</angle>
+		<axiom>! q</axiom>
+		<rules>
+			<rule>
+				<lhs>p</lhs>
+				<rhs>2 - f r 4 + f s 2 - f u</rhs></rule>
+			<rule>
+				<lhs>q</lhs>
+				<rhs>1L f t 2 + f 1L r 4 - f 1L s 2 +</rhs></rule>
+			<rule>  
+				<lhs>r</lhs>
+				<rhs>2 + f p 4 - f q 2 + f t</rhs></rule>
+			<rule>
+				<lhs>s</lhs>
+				<rhs>f u 2 - f p 4 + f q 2 -</rhs></rule>
+			<rule>
+				<lhs>t</lhs>
+				<rhs>+ f u 2 - f p +</rhs></rule>
+			<rule>
+				<lhs>u</lhs>
+				<rhs>- f q 2 + f t -</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs></rhs></rule></rules>
+    		<parameters>
+      			<generations>8</generations>
+      			<vector>
+        			<length>25</length>
+				<angle>0</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>rug</name>
+		<angle>90</angle>
+		<axiom>0C f - 1C f - 2C f - 3C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f [ - f - f ] f f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>5</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>sierpinski arrowhead</name>
+		<angle>60</angle>
+		<axiom>0L y f</axiom> <!-- can use x -->
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>y f + x f + y</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>1L x f - 1L y f - 1L x</rhs></rule></rules>
+    		<parameters>
+      			<generations>7</generations>
+      			<vector>
+        			<length>8</length>
+				<angle>60</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>sierpinski arrowhead (Gary William Flake)</name>
+		<angle>60</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L [- g 3 + 1L f ] [ - g + 1L f ] [ g g 2- 1L f ]</rhs></rule>
+			<rule>
+				<lhs>g</lhs>
+				<rhs>g g</rhs></rule></rules>
+    		<parameters>
+      			<generations>7</generations>
+      			<vector>
+        			<length>8</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>sierpinski carpet</name>
+		<comment>from Facint website</comment>
+		<angle unitOfMeasure="directions">4</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L f + 1L f - 1L f - 1L f - g + 1L f + 1L f + 1L f - 1L f</rhs></rule>
+			<rule>
+				<lhs>g</lhs>
+				<rhs>g g g</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>6</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>sierpinski gasket</name>
+		<angle>60</angle>
+		<axiom>0C f 2 - 1C f 2 - 2C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f 2 - f 2 - f 2 - g g</rhs></rule>
+			<rule>
+				<lhs>g</lhs>
+				<rhs>g g</rhs></rule></rules>
+    		<parameters>
+      			<generations>6</generations>
+      			<vector>
+        			<length>15</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>sierpinski isoceles</name>
+		<angle>45</angle>
+		<axiom>0C l 2 - f 2 - 1C l 2 - f</axiom>
+		<rules>
+			<rule>
+				<lhs>l</lhs>
+				<rhs>+ r - f - r +</rhs></rule>
+			<rule>
+				<lhs>r</lhs>
+				<rhs>- l + f + l -</rhs></rule></rules>
+    		<parameters>
+      			<generations>10</generations>
+      			<vector>
+        			<length>8</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>sierpinski maze (Gary William Flake)</name>
+		<angle>60</angle>
+		<axiom>f</axiom> <!-- can use x -->
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>[g 1L f][+ g 3- 1L f][g + g + 1L f]</rhs></rule>
+			<rule>
+				<lhs>g</lhs>
+				<rhs>g g</rhs></rule></rules>
+    		<parameters>
+      			<generations>7</generations>
+      			<vector>
+        			<length>8</length>
+				<angle>60</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>sierpinski square</name>
+		<angle>90</angle>
+		<axiom>0C f - 1C f - 2C f - 3C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f f [ - f - f - f ] f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>5</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>sierpinski triangle</name>
+		<angle>60</angle>
+		<axiom>f x f 2- f f 2- f f</axiom> <!-- can use x -->
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>1L 2- f x 1L f 2+ f x 1L f 2+ f x 1L f 2 -</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f f</rhs></rule></rules>
+    		<parameters>
+      			<generations>6</generations>
+      			<vector>
+        			<length>8</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>sphinx (Herb Savage)</name>
+		<angle unitOfMeasure="directions">6</angle>
+		<axiom>0C x</axiom>
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>+ 1L f f - 1L y f f + f f 2 - f f f ^ 1L x ^ f 2 - 1L y f f f 1L y f f f ^</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>- f f + x f f - f f 2 + f f f ^ y ^ f 2 + x f f f x f f f ^</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>g g</rhs></rule>
+			<rule>
+				<lhs>g</lhs>
+				<rhs>g g</rhs></rule></rules>
+    		<parameters>
+      			<generations>6</generations>
+      			<vector>
+        			<length>7</length>
+				<angle>180</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>square</name>
+		<angle>90</angle>
+		<axiom>0C f + x 1C f + f + x f</axiom> <!-- x is half square -->
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>x f - f + f - x f + f + x f - f + f - x</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>7</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>square gasket</name>
+		<angle unitOfMeasure="directions">4</angle>
+		<axiom>x</axiom>
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>1L + f x 1L f + f x 1L f + f x 1L f + f x 1L f</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f f </rhs></rule></rules>
+    		<parameters>
+      			<generations>6</generations>
+      			<vector>
+        			<length>13</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>square spikes</name>
+		<angle>5</angle>
+		<axiom>0C f 18 - 1C f 18 - 2C f 18 - 3C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f 17 - f 34 + f 17 - f</rhs></rule></rules>
+    		<parameters>
+      			<generations>6</generations>
+      			<vector>
+        			<length>9</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>terdragon</name>
+		<comment>from Fracint website</comment>
+		<angle unitOfMeasure="directions">3</angle>
+		<axiom>! f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L f + 1L f - 1L f</rhs></rule></rules>
+    		<parameters>
+      			<generations>7</generations>
+      			<vector>
+        			<length>23</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>tiles</name>
+		<angle>90</angle>
+		<axiom>0C f + 1C f + 2C f + 3C f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>f f + f - f + f + f f</rhs></rule></rules>
+    		<parameters>
+      			<generations>4</generations>
+      			<vector>
+        			<length>20</length></vector></parameters></lsystem>
+	<lsystem>
+		<name>tree 1</name>
+		<angle>20</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L | [ 3- 1L f ] [ 3+ 1L f ] 1L | [ 2- 1L f ] [ 2+ 1L f ] 1L | 1L f</rhs></rule></rules>
+    		<parameters>
+      			<generations>6</generations>
+      			<vector>
+        			<length>80</length>
+				<scale>0.65</scale>
+				<angle>90</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>tree 2</name>
+		<angle>8</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L | [ 5+ 1L f ] [ 7- 1L f  ] - 1L | [ 4+ 1L f ] [ 6- 1L f ] - 1L | [ 3+ 1L f ] [ 5- 1L f ] - 1L | 1L f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>80</length>
+				<scale>0.65</scale>
+				<angle>90</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>tree 3</name>
+		<angle>20</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L | [ 2- 1L f ] [ + 1L f ] - 1L f</rhs></rule></rules>
+    		<parameters>
+      			<generations>8</generations>
+      			<vector>
+        			<length>230</length>
+				<scale>0.65</scale><angle>90</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>trigrid 1</name>
+		<angle unitOfMeasure="directions">6</angle>
+		<axiom>0L x</axiom>
+		<rules>
+			<rule>
+				<lhs>x</lhs>
+				<rhs>f 1L y [ + f 1L y ] [ 2- f 1L y ] f 1L y</rhs></rule>
+			<rule>
+				<lhs>y</lhs>
+				<rhs>f x [ 2 + f x ] [ - f x ] f x</rhs></rule>
+			<rule>
+				<lhs>f</lhs>
+				<rhs></rhs></rule></rules>
+   		<parameters>
+      			<generations>7</generations>
+      			<vector>
+        			<length>8</length>
+				<angle>0</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>twig</name>
+		<angle>20</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L | [ - 1L f ] [ + 1L f ]</rhs></rule></rules>
+    		<parameters>
+      			<generations>11</generations>
+      			<vector>
+        			<length>250</length>
+				<scale>0.65</scale><angle>90</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>two y</name>
+		<angle>45</angle>
+		<axiom>D [ f ] 4 - f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>| [ + f ] [ - f  ]</rhs></rule></rules>
+    		<parameters>
+      			<generations>10</generations>
+      			<vector>
+        			<length>200</length>
+				<scale>0.65</scale></vector></parameters></lsystem>
+	<lsystem>
+		<name>weed 1</name>
+		<angle>25</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L f [ - 1L f ] 1L f [ + 1L f ] 1L f</rhs></rule></rules>
+    		<parameters>
+      			<generations>5</generations>
+      			<vector>
+        			<length>5</length>
+				<angle>90</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>weed 2</name>
+		<angle>25</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L | [ - f ] 1L | [ + f ] 1L f</rhs></rule></rules>
+    		<parameters>
+      			<generations>8</generations>
+      			<vector>
+        			<length>130</length>
+				<scale>0.65</scale><angle>90</angle></vector></parameters></lsystem>
+	<lsystem>
+		<name>weed 3</name>
+		<angle>20</angle>
+		<axiom>f</axiom>
+		<rules>
+			<rule>
+				<lhs>f</lhs>
+				<rhs>1L | [ - 1L f ] 1L | [ + 1L f ] [ - 1L f ] 1L f</rhs></rule></rules>
+    		<parameters>
+      			<generations>6</generations>
+      			<vector>
+        			<length>130</length>
+				<scale>0.65</scale><angle>90</angle></vector></parameters></lsystem>
+	</plots>
