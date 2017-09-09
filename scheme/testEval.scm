@@ -98,5 +98,30 @@
                   x))))
   (foo 12)) ;=> 12
 
-  ;doesn't work
-  (define id (lambda (x) x))
+(define id (lambda (x) x))
+
+(define fact 
+	(lambda (n)
+		(if (zero? n) 1
+			(* n (fact (- n 1))))))
+			
+(define append 
+	(lambda (x y)
+		(if (null? x) y
+			(cons (car x) (append (cdr x) y)))))
+
+(define rev
+  (lambda (x)
+    (if (null? x) '()
+        (append (rev (cdr x)) (list (car x))))))
+
+;doesn't work
+(rev '(a))
+
+(define revaux
+	(lambda (x acc)
+		(if (null? x) acc
+			(revaux (cdr x) (cons (car x) acc)))))
+
+(define rev 
+	(lambda (x) (revaux x '())))

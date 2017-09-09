@@ -12,6 +12,17 @@ open System.Xml.Linq
 Milestone:  factorial working on the morning of 8 Sep 17 Fr before work.
 *)
 
+(*
+to do:
+
+refactor scmObject.Cons {car = None; cdr = None} to scmAtom.Null
+scmObject should not be option types
+refactor booleans to scmAtom.Bool true and scmAtom.Bool false
+get rid of scmAtom.Sharp
+implement letrec
+debug why rev fails
+*)
+
 type scmToken =
     | LeftParen
     | RightParen
@@ -295,6 +306,7 @@ type scmAtom =
     | Float of float
     | Sharp of string
     | Int of int
+    //| Bool of bool
 and scmBlockType = 
     | Lambda
     | Let
@@ -380,14 +392,10 @@ and scmObject =
                 let mutable cell = c 
                 let mutable keepGoing = true
                 let mutable firstCell = true
-                cell <- c
                 while keepGoing do
                     match cell.car, cell.cdr with
                     | None, None ->
-                        if firstCell then
-                            s <- s + ")"
-                        else
-                            failwith "bad cons"
+                        s <- s + ")"
                         keepGoing <- false
                     | Some h, Some t ->
                         match t with
@@ -396,13 +404,17 @@ and scmObject =
                             keepGoing <- false
                         | scmObject.Block b ->
                             failwith "not implemented yet"
-                        | scmObject.Cons c -> 
-                            s <- s + (iter h) + " " 
+                        | scmObject.Cons c ->
+                            if not firstCell then 
+                                s <- s + " "
+                            s <- s + (iter h) //+ " " 
                             cell <- c
                         | scmObject.Thunk t ->
                             let t = t.value
                             s <- s + (iter t)
                     | Some h, None ->
+                        if not firstCell then 
+                            s <- s + " "
                         s <- s + (iter h) + ")"
                         keepGoing <- false
                     | None, _ ->
@@ -617,8 +629,6 @@ let buildHeap (tokens : scmTokens) =
         | _ -> 
             failwith "not implemented yet"
     recur ()
-
-
 
 let rec eval 
     (heap : scmObject) 
@@ -1271,7 +1281,15 @@ let scmZero (args : scmCons) (block : scmBlock option) =
         | _ -> failwith "zero? only implemented for ints and floats"
     | _ -> failwith "bad argument to zero?"
 
-//refactor to get rid of option type for scheme objects; instead add scmObject.Null?
+let scmNull (args : scmCons) (block : scmBlock option) =
+    match args.car with
+    | Some b ->
+        let e = eval b block
+        match e with
+        | scmObject.Cons { car = None; cdr = None; } ->
+            scmObject.Atom (scmAtom.Sharp "t")
+        | _ -> scmObject.Atom (scmAtom.Sharp "f")
+    | _ -> failwith "bad argument to null?"
 
 let populateEnv () =
     let env = topLevel.top
@@ -1373,6 +1391,11 @@ let populateEnv () =
     env.add 
         (symbolTable.getSymbol "zero?") 
         (scmObject.Atom (scmAtom.Primitive scmZero))
+        true
+        stack
+    env.add 
+        (symbolTable.getSymbol "null?") 
+        (scmObject.Atom (scmAtom.Primitive scmNull))
         true
         stack
 
