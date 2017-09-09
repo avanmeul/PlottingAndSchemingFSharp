@@ -8,6 +8,10 @@ open System.Windows
 open System.Windows.Controls
 open System.Xml.Linq
 
+(*
+Milestone:  factorial working on the morning of 8 Sep 17 Fr before work.
+*)
+
 type scmToken =
     | LeftParen
     | RightParen
@@ -1218,6 +1222,22 @@ let scmDefine (args : scmCons) (block : scmBlock option) =
     | _ ->
         failwith "expected identifier as first arg to define"
 
+let inline CAR (arg : scmCons) = arg.car
+let inline CDR (arg : scmCons) = arg.cdr
+let MaybeCDR (arg : scmObject option) =
+    match arg with
+    | Some (scmObject.Cons x) -> x.cdr
+    | _ -> None
+let CADR (arg : scmCons) = 
+    match arg.cdr with
+    | Some (scmObject.Cons x) -> x.car
+    | _ -> None
+let CADDR (arg : scmCons) =
+    match arg.cdr |> MaybeCDR with
+    | Some (scmObject.Cons x) -> x.car
+    | _ -> None
+
+//note:  if doesn't verify arity!
 let scmIf (args : scmCons) (block : scmBlock option) =
     match args.car with
     | Some b ->
@@ -1226,24 +1246,32 @@ let scmIf (args : scmCons) (block : scmBlock option) =
         | scmObject.Atom (scmAtom.Sharp b) ->
             match b with
             | "t" ->
-                match args.cdr with
-                | Some (scmObject.Cons {car = Some arg1; cdr = _}) -> 
-                    eval arg1 block
-                | _ -> failwith "bad then clause in if"
+                match CADR args with
+                | Some x -> eval x block
+                | None -> failwith "bad then clause in if"
             | "f" ->
-                match args.cdr with
-                | Some (scmObject.Cons {
-                            car = _; 
-                            cdr = Some (scmObject.Cons { car = Some arg2; cdr = _}) }) -> 
-                    eval arg2 block
-                | _ -> failwith "bad then clause in if"
+                match CADDR args with
+                | Some x -> eval x block
+                | None -> failwith "bad else clause in if"
             | _ -> failwith "bad boolean argument to if"
-        | _ -> failwith "la"
-    | _ -> failwith "barf"
+        | _ -> failwith "non-Boolean predicate in if"
+    | _ -> failwith "non-Boolean predicate in if"
 
-//zero?
+let scmZero (args : scmCons) (block : scmBlock option) =
+    match args.car with
+    | Some b ->
+        let e = eval b block
+        match e with
+        | scmObject.Atom (scmAtom.Float f) -> 
+            if f = 0.0 then scmObject.Atom (scmAtom.Sharp "t")
+            else scmObject.Atom (scmAtom.Sharp "f")
+        | scmObject.Atom (scmAtom.Int i) ->
+            if i = 0 then scmObject.Atom (scmAtom.Sharp "t")
+            else scmObject.Atom (scmAtom.Sharp "f")
+        | _ -> failwith "zero? only implemented for ints and floats"
+    | _ -> failwith "bad argument to zero?"
+
 //refactor to get rid of option type for scheme objects; instead add scmObject.Null?
-//define CAR, CDR, CADR?  Use with Option.bind?
 
 let populateEnv () =
     let env = topLevel.top
@@ -1340,6 +1368,11 @@ let populateEnv () =
     env.add 
         (symbolTable.getSymbol "if") 
         (scmObject.Atom (scmAtom.Primitive scmIf))
+        true
+        stack
+    env.add 
+        (symbolTable.getSymbol "zero?") 
+        (scmObject.Atom (scmAtom.Primitive scmZero))
         true
         stack
 
