@@ -1,0 +1,36 @@
+Problem:  there are bugs in the embedded scheme interpreter that I can't figure out.
+
+Solution:  create a new interpreter, starting from just a simple record that has stack, environment, last item evaluated, and has push and pop capabilities.
+
+Push:  takes a list of bindings and returns a new world (structure that has all the goodies) with a new environment extended by the append of the pushed items.  The newly stacked item then has the item to be evaluated and the top of the new environment.
+
+Pop:  returns a new world with the tail of the environment, and a return value.
+
+stack frames have:
+
+env
+expr to be evaluated
+return value (which can be none)
+
+world has:
+
+stack
+environment
+last return value
+
+methods:  push, pop, eval, find, last return value
+
+push new_bindings expr
+pop result_value (world will have tail of environment)
+
+The first push will take the environment currently as it is, and it will extend it.
+
+The beauty of this is that I'd be creating a stack world that has no evaluator; that can be plugged in later.
+
+I can then make sure it's working before plugging in an evaluator.
+
+I can also check methods like find (which looks for a binding on the environment), and methods that return the various parts of the world of interest.
+
+This can all be done in a purely functional way.
+
+Q:  what should I call a world?  Is that good enough, or should I call it "stack machine" or just "machine" or "evaluator"?

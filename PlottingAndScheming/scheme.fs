@@ -15,6 +15,7 @@ Milestone:  factorial working on the morning of 8 Sep 17 Fr before work.
 (*
 to do:
 
+use tuple trick:  for parsing (tokens and remaining buffer), for building heap (heap and remaining tokens), for eval (result, and environment).
 refactor scmObject.Cons {car = None; cdr = None} to scmAtom.Null
 scmObject should not be option types
 refactor booleans to scmAtom.Bool true and scmAtom.Bool false
